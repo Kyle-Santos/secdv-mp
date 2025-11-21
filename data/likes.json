@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "660285186630e644cc8269b4"
+  },
+  "reviewId": {
+    "$oid": "6600365fce3617e7f1355085"
+  },
+  "userId": {
+    "$oid": "65edeaf7b754b09640686ab4"
+  },
+  "isLike": true,
+  "createdAt": {
+    "$date": "2024-03-26T08:19:36.727Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "660285416630e644cc8269ce"
+  },
+  "reviewId": {
+    "$oid": "65fbed6497831678af333d7b"
+  },
+  "userId": {
+    "$oid": "65edeaf7b754b09640686ab4"
+  },
+  "isLike": true,
+  "createdAt": {
+    "$date": "2024-03-26T08:20:17.048Z"
+  },
+  "__v": 0
+}]

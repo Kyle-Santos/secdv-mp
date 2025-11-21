@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+body{
+    font-family: "Dosis", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(30, 34, 39, 0.48), #3A3535);
+    width: 100%;
+}
+
+a {
+    all: unset;
+}
+
+.condo-list a:hover {
+    background-color: rgb(136, 136, 132);
+    border-radius: 50px;
+  }
+
+textarea {
+    padding: 5px 10px;
+}
+
+.hover-element:hover{
+    cursor:pointer;
+}
+
+
+.nav-logged-in {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 10pt;
+}
+
+.nav-logged-in > a > img{
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.nav-logged-in > button{
+    margin: 20px;
+    height: 20px;
+    background-color: #2B2B2B;
+    color: white;
+}
+
+.pop-up-color{
+    background-color:#2B2B2B;
+    color: white;
+}
+
+.nav-button{
+    background-color: #2B2B2B;
+    height: 60px;
+    border: none;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.nav-button:hover{
+    background-color: #3f3f3f;
+}
+
+.nav-bar{
+    height: 65px;
+    width: 100%;
+    background-color: #2B2B2B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    position:fixed;
+    font-family: 'Libre Franklin', sans-serif;
+    z-index: 9999;
+}
+
+.white-bar{
+    color: white;
+    font-size: 21pt;  
+}
+
+.right-nav{
+    display: flex;
+    justify-content: right;
+    align-items: center;    
+}
+
+.right-nav > div > img{
+    padding-right: 10px;
+}
+
+.nav-logged-out {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.login-submit{
+    display:flex;
+    padding-top: 10px;
+}
+
+.login-submit > button{
+    margin: 0px 10px;
+}
+
+.login-details{
+    padding:5px;
+    display: flex;
+}
+
+.icon:hover{
+    background-color: #3f3f3f;
+}
+
+.icon{
+    border-radius:5px;
+    height: 100%;
+}
+
+.login-details > div{
+    padding: 0 10px;
+    width: 20%;
+}
+
+.login-font{
+    font-size: 10pt;
+    color: white;
+    border-radius: 10px;
+}
+
+.login-font:hover{
+    cursor: pointer;
+}
+
+div.login-font {
+    margin-left: 20px;
+}
+
+.login-font:hover{
+    background-color: #3f3f3f;
+}
+
+
+
+.right-nav > div{
+    padding: 20px;
+}
+
+.login-popup{
+    width:330px;
+    height:140px;
+    background-color: #2D2D2D;
+    color: white;
+    align-content: center;
+    top: 65px;
+    right: 170px;
+    position: fixed;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    z-index: 9999;
+}
+
+.pop-up {
+    position: fixed;
+    top: 55%;
+    bottom: 0;
+    right: 50%;
+    left: 50%;
+    height: 550px;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    background-color: #2D2D2D;
+    color: white;
+    border-radius: 25px;
+}
+
+.pop-up-small {
+    position: fixed;
+    top: 55%;
+    bottom: 0;
+    right: 50%;
+    left: 50%;
+    height: 280px;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    background-color: #2D2D2D;
+    color: white;
+    border-radius: 25px;
+}
+
+.pop-up-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+#close:hover{
+    cursor:pointer;
+}
+
+#close{
+    z-index: 9999;
+}
+
+.close-button{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    box-shadow: none;
+    background-color: #2B2B2B;
+    color: white;
+}
+
+.pop-up-body > div{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.select-avatar{
+    padding:0 5px;
+    justify-content: center;
+}
+
+.select-avatar > div{
+    display:flex;
+    justify-content: center;
+}
+
+.pop-up-body > div > div > div{
+    display: flex;
+    justify-content: center;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+}
+
+.pop-up-body > form > div{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.pop-up-body > form > div > input{
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    display: flex;
+}
+
+.pop-up-body > form > div > textarea{
+    width: 300px;
+}
+
+.pop-up-body > form > div > .submit{
+    display: flex;
+    width: 300px;
+    align-items: center;
+    border-radius: 5px;
+    height: 30px;
+    padding: 10px;
+    background-color: #0094FF;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.x-container{
+    display: flex;
+    justify-content: right;
+}
+
+.x-container > div{
+    background-color:#D9D9D9;
+    color: black;
+    padding: 5px;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footerbottom {
+    background-color: #2B2B2B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 80px;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.contactfooter {
+    max-height: 80px;
+    display: grid;
+    place-items: center;
+    color: white;
+}
+
+.contactfooter h6, .contactfooter h7 {
+    text-align: center;
+}
+
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #2B2B2B;
+    color: white;
+    max-width: 120px;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+}
+
+.icon.highlighted .nav-dropdown {
+    display: block;
+}
+
+.nav-dropdown-item {
+    padding: 10px;
+}
+
+.nav-dropdown-item:hover {
+    background-color: gray;
+}

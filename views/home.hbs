@@ -1,0 +1,63 @@
+
+
+        <div class="main-image" id="list-label">
+            <div class="title">
+                <b class="title-bold">What's Your Condo Bro?</b>
+                </div>
+                <div class="right-nav">
+            </div>
+            <div class="search-bar">
+                <form id="search-condo">
+                  <input id="condo-name" type="text" placeholder="Search a Condo" required></input>  
+                  <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </form>       
+
+                
+            </div>
+        </div>
+
+        <div class="list-label" >
+            <h1 >List of Condominiums</h1>
+        </div>
+
+        <form id="filter-rating">
+        <div class="filterclass">
+            <label>Minimum Rating:</label>           
+            <select name="filter" id="filter">
+                <option value="0">None</option>
+                <option value="5">5 star</option>
+                <option value="4">4 star</option>
+                <option value="3">3 star</option>
+                <option value="2">2 star</option>
+                <option value="1">1 star</option>
+            </select>
+            <div class="filterinput">
+                <button type="submit">Filter</button>
+            </div>
+        </div>    
+        </form>
+        
+
+        <div class="condo-list" id="condo-container">
+            {{#each condos}}
+            <a href="/condo/{{id}}">
+                <div>
+                    <div class="condo-image-container">
+                        <img src="{{img}}" class="condo-list-img"> <br/>
+                    </div>
+                    <div class="condo-name-container">
+                        <h2>{{{name}}}</h2>
+                    </div>
+                    <div class="condo-description-container">
+                        <p>{{description}}</p>
+                    </div>
+                    <div class="condo-rating-container">
+                        <p>Average Rating: {{rating}}/5</p>
+                        <progress value="{{rating}}" max="5"></progress>                  
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+        </div>

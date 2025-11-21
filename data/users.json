@@ -1,0 +1,158 @@
+[{
+  "_id": {
+    "$oid": "65edeaf7b754b09640686ab4"
+  },
+  "user": "kyle",
+  "pass": "$2b$10$kPzXrHs34SxvlXV.OPy7FOgXOj/i4bdS9DR13k1.NubaQN91tU8Mu",
+  "picture": "images/client-uploaded-files/man (1).png",
+  "role": "Condo Bro",
+  "createdAt": {
+    "$date": "2024-03-10T17:16:39.430Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-28T07:05:08.121Z"
+  },
+  "email": "kyle_adrian_santos@dlsu.edu.ph",
+  "city": "Manila",
+  "bio": "I am currently a sophomore enrolled in the Bachelor of Science program in Computer Science at De La Salle University, where I have chosen to specialize in Network and Information Security. I'm currently renting a condo in Vista Taft for about 2 years now.",
+  "education": "De La Salle University Manila",
+  "reviews": [
+    {
+      "$oid": "65f02a95457221883bab999d"
+    },
+    {
+      "$oid": "65f031ede78e8879e367ca44"
+    },
+    {
+      "$oid": "65f042aebca5ef84561f228c"
+    },
+    {
+      "$oid": "65fbed6497831678af333d7b"
+    },
+    {
+      "$oid": "6600365fce3617e7f1355085"
+    },
+    {
+      "$oid": "660516a478ac59a1a66a059e"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65edecf70572307102cdd829"
+  },
+  "user": "karl",
+  "pass": "$2b$10$kPzXrHs34SxvlXV.OPy7FOgXOj/i4bdS9DR13k1.NubaQN91tU8Mu",
+  "picture": "images/gamer.png",
+  "role": "Condo Bro",
+  "createdAt": {
+    "$date": "2024-03-10T17:25:11.476Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-11T15:32:55.604Z"
+  },
+  "email": "none",
+  "city": "not specified",
+  "bio": "",
+  "education": "not specified",
+  "reviews": [
+    {
+      "$oid": "65f02a95457221883bab999c"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65eded310572307102cdd833"
+  },
+  "user": "kailu",
+  "pass": "$2b$10$kPzXrHs34SxvlXV.OPy7FOgXOj/i4bdS9DR13k1.NubaQN91tU8Mu",
+  "picture": "images/man.png",
+  "role": "Condo Bro",
+  "createdAt": {
+    "$date": "2024-03-10T17:26:09.106Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-12T11:54:08.616Z"
+  },
+  "email": "none",
+  "city": "not specified",
+  "bio": "",
+  "education": "not specified",
+  "reviews": [
+    {
+      "$oid": "65f02a95457221883bab999b"
+    },
+    {
+      "$oid": "65f04260bca5ef84561f227f"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65eded610572307102cdd83f"
+  },
+  "user": "enzo",
+  "pass": "$2b$10$kPzXrHs34SxvlXV.OPy7FOgXOj/i4bdS9DR13k1.NubaQN91tU8Mu",
+  "picture": "images/gamer.png",
+  "role": "Condo Bro",
+  "createdAt": {
+    "$date": "2024-03-10T17:26:57.820Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-10T17:26:57.820Z"
+  },
+  "email": "none",
+  "city": "not specified",
+  "bio": "",
+  "education": "not specified",
+  "reviews": [
+    {
+      "$oid": "65f02a95457221883bab999a"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65eded9d0572307102cdd84d"
+  },
+  "user": "msTaguro",
+  "pass": "$2b$10$kPzXrHs34SxvlXV.OPy7FOgXOj/i4bdS9DR13k1.NubaQN91tU8Mu",
+  "picture": "images/woman (1).png",
+  "role": "Condo Bro",
+  "createdAt": {
+    "$date": "2024-03-10T17:27:57.548Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-10T17:27:57.548Z"
+  },
+  "email": "none",
+  "city": "not specified",
+  "bio": "",
+  "education": "not specified",
+  "reviews": [
+    {
+      "$oid": "65f02a95457221883bab9999"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f30c88e0199de136f395ea"
+  },
+  "user": "Bob",
+  "pass": "$2b$10$kPzXrHs34SxvlXV.OPy7FOgXOj/i4bdS9DR13k1.NubaQN91tU8Mu",
+  "picture": "images/man.png",
+  "email": "none",
+  "role": "Owner",
+  "city": "Makati",
+  "reviews": [],
+  "createdAt": {
+    "$date": "2024-03-14T14:41:12.800Z"
+  },
+  "updatedAt": {
+    "$date": "2024-03-14T14:42:56.663Z"
+  },
+  "bio": "Owner of W.H. Taft, 2 Torre, Burgundy, and Green Residences.\n\n",
+  "education": "University of the Philippines Diliman"
+}]

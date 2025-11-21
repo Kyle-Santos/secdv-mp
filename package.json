@@ -1,0 +1,22 @@
+{
+  "name": "condo-review-web-app",
+  "version": "1.0.0",
+  "description": "## This is our MCO2 Functioning Project that uses Nodejs, mongodb, and express",
+  "main": "node_modules/array-flatten/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "connect-mongodb-session": "^5.0.0",
+    "express": "^4.19.1",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.2.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

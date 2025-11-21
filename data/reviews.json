@@ -1,0 +1,250 @@
+[{
+  "_id": {
+    "$oid": "65f02a95457221883bab9999"
+  },
+  "title": "Nice condo!!",
+  "content": "Absolutely delighted with my experience at this condominium! The facilities are top-notch, offering a luxurious and comfortable living environment. The location is unbeatable, providing convenient access to shopping, dining, and transportation. The staff are incredibly friendly and accommodating, always ready to assist with any inquiries. The overall ambiance is serene and well-maintained, making it a perfect retreat after a long day. Highly recommended for those seeking upscale living with convenience at its core!",
+  "rating": 4,
+  "image": "images/client-uploaded-files/condo-room.jpeg",
+  "likes": 0,
+  "dislikes": 0,
+  "date": {
+    "$date": "2024-03-10T16:00:00.000Z"
+  },
+  "author": {
+    "$oid": "65eded9d0572307102cdd84d"
+  },
+  "condoId": "wh-taft",
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "65f02a95457221883bab999a"
+  },
+  "title": "Best condo ever!!!!!",
+  "content": "An exemplary living experience awaits at this condominium! From the moment I stepped in, I was captivated by the stunning architecture and impeccable design. The amenities surpass expectations, catering to every need and desire with elegance and sophistication. The location is a gem, nestled in a vibrant neighborhood yet offering a peaceful sanctuary away from the hustle and bustle. The staff goes above and beyond, providing exceptional service with genuine warmth and professionalism. Maintenance is prompt and meticulous, ensuring a seamless living experience. Without a doubt, this condominium sets the standard for luxurious urban living, earning my highest recommendation with five stars!",
+  "rating": 5,
+  "likes": 0,
+  "dislikes": 0,
+  "date": {
+    "$date": "2024-03-10T16:00:00.000Z"
+  },
+  "author": {
+    "$oid": "65eded610572307102cdd83f"
+  },
+  "condoId": "wh-taft",
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "65f02a95457221883bab999b"
+  },
+  "title": "FIVE STARRRR",
+  "content": "Five-star living defined! This condominium exceeds all expectations with its flawless blend of luxury, convenience, and comfort. The amenities are unparalleled, offering a resort-like experience right at home. From the state-of-the-art fitness center to the stunning rooftop pool, every detail is thoughtfully crafted to elevate the resident experience. The location is prime, surrounded by trendy shops, delicious dining options, and easy access to transportation. The staff are incredibly attentive and welcoming, making every interaction a pleasure. If you're seeking the pinnacle of urban living, look no further than this exceptional condominium. Five stars without hesitation!",
+  "rating": 5,
+  "likes": 0,
+  "dislikes": 0,
+  "date": {
+    "$date": "2024-03-10T16:00:00.000Z"
+  },
+  "author": {
+    "$oid": "65eded310572307102cdd833"
+  },
+  "condoId": "wh-taft",
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "65f02a95457221883bab999c"
+  },
+  "title": "W CONDO FRFR",
+  "content": "Exceptional in every aspect, this condominium earns a resounding five stars! From the moment you step into the grand lobby, you're greeted by elegance and sophistication. The amenities are nothing short of extraordinary, providing residents with a lifestyle of luxury and convenience. Whether relaxing by the meticulously landscaped pool or enjoying the panoramic views from the sky lounge, every moment feels like a retreat. The location is unbeatable, offering easy access to entertainment, dining, and transportation options. The staff are friendly, attentive, and always go above and beyond to ensure resident satisfaction. Without a doubt, this condominium sets the standard for upscale urban living. Five stars for an unparalleled experience!",
+  "rating": 5,
+  "likes": 0,
+  "dislikes": 0,
+  "date": {
+    "$date": "2024-03-10T16:00:00.000Z"
+  },
+  "author": {
+    "$oid": "65edecf70572307102cdd829"
+  },
+  "condoId": "wh-taft",
+  "comments": [],
+  "__v": 3
+},
+{
+  "_id": {
+    "$oid": "65f02a95457221883bab999d"
+  },
+  "title": "great value",
+  "content": "Unbeatable value! This condominium offers a five-star living experience at a remarkably affordable price. Despite its luxurious amenities and prime location, the cost of living here is surprisingly reasonable compared to other options in the area. From the beautifully landscaped grounds to the stylishly appointed interiors, every aspect reflects quality and attention to detail without breaking the bank. Plus, with a range of floor plans available, there's something to suit every budget and lifestyle. Whether you're a first-time buyer or a seasoned investor, this condominium offers exceptional value that's hard to beat. Five stars for delivering luxury living without the hefty price tag!",
+  "rating": 4,
+  "likes": 0,
+  "dislikes": 0,
+  "date": {
+    "$date": "2024-03-10T16:00:00.000Z"
+  },
+  "author": {
+    "$oid": "65edeaf7b754b09640686ab4"
+  },
+  "condoId": "wh-taft",
+  "comments": [
+    {
+      "_id": {
+        "$oid": "660033870e7f03cee44fd826"
+      },
+      "content": "Thank you for your input!",
+      "date": {
+        "$date": "2024-03-12T16:00:00.000Z"
+      },
+      "user": {
+        "$oid": "65f30c88e0199de136f395ea"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "660033870e7f03cee44fd827"
+      },
+      "date": {
+        "$date": "2024-03-11T16:00:00.000Z"
+      },
+      "user": {
+        "$oid": "65eded9d0572307102cdd84d"
+      },
+      "content": "Totally agree with you there!"
+    }
+  ],
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "65f031ede78e8879e367ca44"
+  },
+  "title": "2 torre is mid",
+  "content": "Honestly for me you cant really go wrong with 2 torre but the security might make u think twice ngl",
+  "rating": 3,
+  "likes": 0,
+  "dislikes": 0,
+  "date": {
+    "$date": "2024-03-11T16:00:00.000Z"
+  },
+  "author": {
+    "$oid": "65edeaf7b754b09640686ab4"
+  },
+  "condoId": "2-torre",
+  "comments": [],
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "65f04260bca5ef84561f227f"
+  },
+  "title": "Burgandy kinda lit ngl",
+  "content": "For some people they might not like burgandy because its old, and has no security and the elevator might break, but for me the 44 sq meters you get cant be beaten, and ngl i like that i can have my friends over to code anytime!",
+  "rating": 4,
+  "likes": 0,
+  "dislikes": 0,
+  "date": {
+    "$date": "2024-03-11T16:00:00.000Z"
+  },
+  "author": {
+    "$oid": "65eded310572307102cdd833"
+  },
+  "condoId": "burgundy",
+  "comments": [
+    {
+      "content": "omg?!?!?!?!",
+      "date": {
+        "$date": "2024-03-23T16:00:00.000Z"
+      },
+      "user": {
+        "$oid": "65edeaf7b754b09640686ab4"
+      },
+      "_id": {
+        "$oid": "660001c8d1c78b8b101c2f2e"
+      }
+    },
+    {
+      "content": "yo really?!",
+      "date": {
+        "$date": "2024-03-23T16:00:00.000Z"
+      },
+      "user": {
+        "$oid": "65edeaf7b754b09640686ab4"
+      },
+      "_id": {
+        "$oid": "6600016b36df05af39400f60"
+      }
+    },
+    {
+      "content": "sheeeesh",
+      "date": {
+        "$date": "2024-03-23T16:00:00.000Z"
+      },
+      "user": {
+        "$oid": "65edeaf7b754b09640686ab4"
+      },
+      "_id": {
+        "$oid": "6600015f36df05af39400f5c"
+      }
+    }
+  ],
+  "__v": 9
+},
+{
+  "_id": {
+    "$oid": "65f042aebca5ef84561f228c"
+  },
+  "title": "HW Taft is so noisy bruhhh",
+  "content": "im so annoyed with wh people being so loud all the time, naririnig ko sila sumigaw pag may ipis every day bruhhh.",
+  "rating": 2,
+  "likes": 0,
+  "dislikes": 0,
+  "date": {
+    "$date": "2024-03-11T16:00:00.000Z"
+  },
+  "author": {
+    "$oid": "65edeaf7b754b09640686ab4"
+  },
+  "condoId": "wh-taft",
+  "comments": [],
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "65fbed6497831678af333d7b"
+  },
+  "title": "Green green green",
+  "content": "what a green condo, all green, nothing but green",
+  "rating": 3,
+  "likes": 1,
+  "dislikes": 0,
+  "date": {
+    "$date": "2024-03-20T16:00:00.000Z"
+  },
+  "author": {
+    "$oid": "65edeaf7b754b09640686ab4"
+  },
+  "condoId": "green-residence",
+  "comments": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6600365fce3617e7f1355085"
+  },
+  "title": "VISTA IS THE BEST",
+  "content": "bro i know vista have strict protocols but im staying there so its a 5 for me fr fr.",
+  "rating": 5,
+  "likes": 1,
+  "dislikes": 0,
+  "date": {
+    "$date": "2024-03-23T16:00:00.000Z"
+  },
+  "author": {
+    "$oid": "65edeaf7b754b09640686ab4"
+  },
+  "condoId": "other-condos",
+  "comments": [],
+  "__v": 0
+}]

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="/">
+        <title>{{title}}</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/257dad1955.js" crossorigin="anonymous"></script>
+        <script src="navbar.js"></script>
+
+        {{#if isHome}}
+            <link rel="stylesheet" href="index.css">
+            <script src="home.js"></script>
+        {{/if}}
+
+        {{#if isCondo}}
+            <link rel="stylesheet" href="condo.css">
+            <script src="condo.js"></script>
+            <script src="like.js"></script>
+        {{else}}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script src="profile.js"></script>
+            <script src="like.js"></script>
+            <script src="condo.js"></script>
+            
+            {{#if isProfile}}
+                <link rel="stylesheet" href="profile.css">
+                <script src="checkUser.js"></script>
+            {{/if}}
+
+            {{#if isEditProfile}}
+                <link rel="stylesheet" href="editprofile.css">
+            {{/if}}
+        {{/if}}
+
+        <link rel="stylesheet" href="general.css">
+
+        <!-- Inter font extrabold-->
+        <!-- Libre Franklin extrabold-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        {{#if isHome}}
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Libre+Franklin:wght@800&display=swap" rel="stylesheet">
+        {{else}}
+            <link href="https://fonts.googleapis.com/css2?family=Inter&family=Libre+Franklin:wght@800&display=swap" rel="stylesheet">
+        {{/if}}
+    </head>
+    <body>
+        {{> navbar}}
+        {{{body}}}
+        {{> footer}}
+    </body>
+</html>

@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "65f02a80457221883bab9990"
+  },
+  "id": "wh-taft",
+  "name": "W.H. Taft<br/>Residences",
+  "address": "Taft Ave, Malate, Manila, 1004 Metro Manila",
+  "rating": 4.3,
+  "img": "images/wh taft.jpg",
+  "description": "Move with ease as you reside in WH Taft Residences’ prime location. As the paramount of accessibility you will find yourself in close proximity to prime colleges and universities. It’s proximity being right beside De La Salle University, UP Manila, St. Scholastica's College, Philippine Christian College and Philippine Normal College makes it a highly preferred address among parents."
+},
+{
+  "_id": {
+    "$oid": "65f02a80457221883bab9991"
+  },
+  "id": "2-torre",
+  "name": "2 Torre<br/>Lorenzo",
+  "address": "Taft Ave, Malate, Manila, 1004 Metro Manila",
+  "rating": 4.3,
+  "img": "images/2 torre.jpeg",
+  "description": "2 Torre Lorenzo stands prominently on Taft Avenue, directly across from De La Salle University, serving as a gateway to the bustling metropolis. It upholds the hallmark convenience, accessibility, and security synonymous with Torre Lorenzo properties. Designed to accommodate diverse lifestyles, the premium building offers studio, one-bedroom, and two-bedroom units, catering to students, young professionals, and families alike. Residents benefit from a range of amenities including a swimming pool, fitness center, residents lounge, and roof deck, enhancing their living experience."
+},
+{
+  "_id": {
+    "$oid": "65f02a80457221883bab9992"
+  },
+  "id": "burgundy",
+  "name": "Burgundy Transpacific Taft",
+  "address": "Taft Ave, Malate, Manila, 1004 Metro Manila",
+  "rating": 4.3,
+  "img": "images/burgs.png",
+  "description": "Burgundy Transpacific Place in Taft seamlessly integrates commercial and residential spaces, creating a dynamic urban complex in Manila's heart. Its sleek design distinguishes it in the bustling cityscape, serving as a vibrant hub for work and leisure. Within its commercial precincts, trendy cafes, boutique shops, and professional services cater to diverse needs, drawing visitors from afar. The residential aspect offers upscale apartments, from cozy studios to spacious penthouses, each equipped with contemporary amenities for comfort. With a commitment to sustainability, Burgundy Transpacific Place not only fosters a vibrant urban lifestyle but also promotes eco-friendly living in Manila's dynamic landscape."
+},
+{
+  "_id": {
+    "$oid": "65f02a80457221883bab9993"
+  },
+  "id": "green-residence",
+  "name": "Green<br/>Residences",
+  "address": "Taft Ave, Malate, Manila, 1004 Metro Manila",
+  "rating": 4.3,
+  "img": "images/Green-Model.png",
+  "description": "Green Residences, located near De La Salle University on Taft Avenue, epitomizes contemporary, eco-conscious living. Its sleek design seamlessly integrates green spaces and energy-efficient features, showcasing sustainable architecture. Residents enjoy amenities such as a fitness center, pool, and gardens, offering a tranquil escape in the bustling city. Its proximity to educational institutions caters to students seeking convenience without compromising on modern living standards. With a range of residential units available, from cozy studios to spacious apartments, Green Residences accommodates diverse lifestyles. Residents not only experience comfortable living but also uphold a commitment to environmental responsibility. Green Residences symbolizes the fusion of urban convenience and eco-conscious design, providing a contemporary living experience that prioritizes sustainability."
+},
+{
+  "_id": {
+    "$oid": "65f02a80457221883bab9994"
+  },
+  "id": "other-condos",
+  "name": "Other<br/>Condos",
+  "address": "Explore the Diversity of Condominiums",
+  "rating": 5,
+  "img": "images/condos.png",
+  "description": "In addition to our curated selection of four premier condominiums, we understand that there's a vast array of options available in the market. That's why we've expanded our offerings to include a generalized condo review. This feature aims to provide valuable insights and information on a wider range of condominiums beyond our fixed selection. Whether you're a first-time buyer, an experienced investor, or simply exploring your options, our comprehensive condo review is designed to help you navigate the diverse landscape of condominium living. From amenities and location to pricing and developer reputation, we aim to provide the resources you need to make informed decisions about your real estate endeavors. Explore the possibilities and find the perfect condo that suits your lifestyle and preferences with our assistance."
+}]

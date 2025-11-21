@@ -1,0 +1,172 @@
+    <!-- Edit Review Modal; will only show when edit is pressed -->
+    <div id="editReviewModal" class="modal pop-up">
+        <div>
+            <button type="button" class="close-button">&times;</button>
+        </div>
+        <div class="modal-content pop-up-body">
+            <div>The<br/>Condo<br/>Bro<br/></div>
+            <h2>Edit Review</h2>
+            <form id="editReviewForm" method="POST" action="/edit-review/{{review._id}}">
+                <input id="editReviewTitle" type="text" name="title" value="" required>
+                <textarea name="editedReview" id="editReviewContent" rows="7" cols="50"></textarea>
+                <div class="star-rating" id="rating">
+                    <button type="button" class="star-rating-button" data-rating="1" aria-label="Rate 1" tabindex="0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ipc-icon icon-star star star-active" viewBox="0 0 24 24" fill="currentColor" role="presentation">
+                            <path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="star-rating-button" data-rating="2" aria-label="Rate 2" tabindex="0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ipc-icon icon-star star star-active" viewBox="0 0 24 24" fill="currentColor" role="presentation">
+                            <path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="star-rating-button" data-rating="3" aria-label="Rate 3" tabindex="0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ipc-icon icon-star star star-active" viewBox="0 0 24 24" fill="currentColor" role="presentation">
+                            <path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="star-rating-button" data-rating="4" aria-label="Rate 4" tabindex="0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ipc-icon icon-star star star-active" viewBox="0 0 24 24" fill="currentColor" role="presentation">
+                            <path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="star-rating-button" data-rating="5" aria-label="Rate 5" tabindex="0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon icon-star star star-active" viewBox="0 0 24 24" fill="currentColor" role="presentation">
+                            <path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <p>Add Image (optional)</p>
+                <input type="file" id="add-image" accept="image/*" name="filename">
+                <div class="button-container">
+                    <button id="edit-review-submit-button" type="submit" class="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="editCommentModal" class="modal pop-up-small">
+        <div>
+            <button type="button" class="close-button">&times;</button>
+        </div>
+        <div class="modal-content pop-up-body">
+            <h2>Edit Comment</h2>
+            <form id="editCommentForm" method="POST" action="/edit-comment/{{comment._id}}">
+                <textarea name="editedComment" id="editCommentContent" rows="6" cols="35"></textarea>
+                <div class="button-container">
+                    <button id="edit-comment-submit-button" type="submit" class="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="cover-photo"></div>
+
+
+    <div class="profile-container">
+        <div class="profile-info">
+            <img class="profile-picture" src="{{data.picture}}"/>
+            <h1 class="profile-name">{{data.user}}<span class="verified-checkmark">{{#if_eq data.role "Condo Bro"}}{{else}}✔️{{/if_eq}}</span></h1>
+            <div class="profile-nav">
+            <ul>
+                <li><button class="edit-profile"><a id="edit-profile-link" href="edit-profile" class="hover-element">Edit Profile</a></button></li>
+            </ul>
+            </div>
+
+                <h2 class="info-title"><br/>Intro</h2>
+                <p class="info-item"><b>Email:</b> {{data.email}}</p>
+                <p class="info-item"><b>Role:</b> {{#if_eq data.role 'Condo Bro'}}{{data.role}}{{else}}Establishment Owner of {{data.role}}{{/if_eq}}</p>
+                <p class="info-item"><b>Studied at</b> {{data.education}}</p>
+                <p class="info-item"><b>Lives in</b> {{data.city}}</p>
+                <div id="about-section">
+                 <p class="info-item"><b>About me:</b><br/>{{data.bio}}</p>
+                </div>
+        </div>
+        
+        
+        <div class="posts-section">
+            <h2 class="post-title">Reviews</h2>
+            {{#each reviews}}
+            <div id="{{_id}}" class="grid-item">
+                <div class="review-header">
+                    <div class="review-header-left">
+                        <a href="condo/{{condoId}}"><h3>{{title}}</h3></a>
+                        {{#if isEdited}}<span><i>Edited</i></span>{{/if}}
+                        <p>Posted on {{date}} | <a href="condo/{{condoId}}"><i>View Condo</i></a></p>
+                    </div>
+                    <div class="review-header-right">
+                        <div class="edit-delete-icons">
+                            <button class="review-edit edit-icon-btn"><i class="fas fa-edit"></i></button>
+                            <button class="review-delete delete-icon-btn" data-value="{{condoId}}" value="{{_id}}"><i class="fas fa-trash"></i></button>
+                        </div>
+                        <div class="star-rating" id="rating">
+                            {{#each rating}}
+                                {{#if this}}
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="star-on" viewBox="0 0 24 24" role="presentation">
+                                        <path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path>
+                                    </svg>
+                                {{else}}
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="star-off" viewBox="0 0 24 24" fill="currentColor" role="presentation">
+                                        <path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path>
+                                    </svg>
+                                {{/if}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                <div class="review-body">
+                    <p>{{content}}</p>
+                </div>
+                {{#if image}}
+                <div class="review-picture">
+                    <img src="{{image}}"/>
+                </div>
+                {{/if}}
+                <div class="review-footer">
+                    <div class="review-profile">
+                        <img src="{{../data.picture}}"/>
+                        <div>
+                            <b>{{../data.user}}</b>
+                            
+                            <br/>{{#if_eq ../data.role "Condo Bro"}}Condo Bro {{else}}Establishment Owner{{/if_eq}}
+                        </div>
+                    </div>
+                    <div class="react-post">
+                        <div class="icon-like">
+                            <button type="button" class="fa fa-thumbs-up {{#if userLike.isLike}}clicked{{/if}}"></button>
+                            <button type="button" class="fa fa-thumbs-down {{#if_eq userLike.isLike '0'}}clicked{{/if_eq}}"></button>
+                        </div>
+                        <span class="total-likes">{{totalLikes}} people liked</span> 
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+                
+            <h2 class="comment-title"><br/>Comments</h2>
+            {{#each comments}}
+                <div class="comment">
+                    <div>
+                        <a href="/profile/{{user.user}}"><img src="{{user.picture}}"/></a>
+                    </div>
+                    <div class="comment-right">
+                        <div class="comment-header">
+                            <div class="user-info">
+                                <a href="/profile/{{user.user}}"><b>{{user.user}}</b></a>
+                                <span class="verified-checkmark">{{#if_eq data.role "Condo Bro"}}{{else}}✔️{{/if_eq}}</span>
+                                {{date}}
+                                {{#if isEdited}}<i>Edited</i>{{/if}}
+                            </div>
+                            <div class="edit-delete-icons">
+                                <button class="comment-edit edit-icon-btn" value="{{_id}}"><i class="fas fa-edit"></i></button>
+                                <button class="comment-delete delete-icon-btn" value="{{_id}}"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            <p>{{content}}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+
+    </div>

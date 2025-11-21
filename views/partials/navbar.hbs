@@ -1,0 +1,131 @@
+<div class="nav-bar">
+    <div class="login-font">
+        <a href="/"><b>The </br>Condo</br>Bro</b></a>
+    </div>
+    <div></div>
+    <div class="right-nav">
+        <div class="nav-logged-in">
+            <a id="profile-link" href="" class="hover-element"><img src=""></a>
+            <div id="username-display"></div></a>                 
+        </div>
+        <div class="nav-logged-out">
+            <button class="nav-button" id="show-login">
+                <b class = "login-font">Log In</b>
+            </button>
+            <button class="nav-button" id="show-create-account">
+                <b class = "login-font" >Sign Up</b>
+            </button>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-bars white-bar padding-5"></i>
+            <div class="nav-dropdown">
+                <div id="login-button" class="nav-dropdown-item">Login</div>
+                <div id="signup-button" class="nav-dropdown-item">Signup</div>
+                <div id="view-condo" class="nav-dropdown-item">View Condos</div>
+                <div id="logout-button" class="nav-dropdown-item">Log Out</div>
+            </div>
+        </div>
+        
+        
+    </div>            
+</div>
+
+        <div class="login-popup" id="login">
+            
+            <form id="login-form" name="login-form" method="post">
+                <div class="x-container">
+                    <button type="button" id="close"><div>X</div></button>
+                </div>
+                <div class="login-details">
+                    <div>Username: </div>
+                    <input type="text" name="username" id="log-username">
+                </div>
+                <div class="login-details">
+                    <div>Password: </div>
+                    <input type="password" name="password" id="log-password">
+                </div>
+                <div class="login-submit">
+                    <button type="submit">Log In</button>
+                    <input type="checkbox">
+                    <div>Remember me on this computer</div>
+                </div>
+                
+            </form>          
+        </div>
+
+        <div class="create-account pop-up" id="create-account">
+            <div>
+                <button type="button" class="close-button" id="close-create">X</button>
+            </div>
+
+            <div class="pop-up-body">
+                <div>The<br/>Condo<br/>Bro<br/></div>
+                <div>Welcome! Let's get started.</div>
+
+                <form id="create-account-form" name="create-account-form" method="post">
+                    <div>
+                        <input type="text" placeholder="Username (required)" name="username">
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Password (required)" name="password">
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Confirm Password (required)" name="confirm-password">
+                    </div>
+                    <div>
+                        <textarea rows="4" placeholder="Tell us about yourself (optional)" name="description"></textarea>
+                    </div>
+                    <div>
+                        Select an avatar:
+                    </div>
+                    
+                    <div>
+                        <div class="select-avatar">
+                            <div>
+                                <img src="images/gamer.png" class="avatar">   
+                            </div>
+                            <div>
+                                <input type="radio" name="avatar" value="1" checked>
+                            </div>    
+                                
+                        </div>
+                        <div class="select-avatar">
+                            <div>
+                                <img src="images/man (1).png" class="avatar">
+                            </div>
+                            <div>
+                                <input type="radio" name="avatar" value="2">
+                            </div>
+                                        
+                        </div>
+                        <div class="select-avatar">
+                            <div>
+                                <img src="images/man.png" class="avatar">
+                            </div>
+                            <div>
+                                <input type="radio" name="avatar" value="3">
+                            </div>                     
+                        </div>
+                        <div class="select-avatar">
+                            <div>
+                                <img src="images/woman (1).png" class="avatar">
+                            </div>
+                            <div>
+                                <input type="radio" name="avatar" value="4">
+                            </div>
+                        </div>
+                        <div class="select-avatar">
+                            <div>
+                                <img src="images/woman.png" class="avatar">
+                            </div>
+                            <div>
+                                <input type="radio" name="avatar" value="5">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>    
+        </div>
