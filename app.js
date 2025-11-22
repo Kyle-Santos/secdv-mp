@@ -35,6 +35,13 @@ server.engine('hbs', handlebars.engine({
     extname: 'hbs',
     helpers: {
         // Define your custom helper functions here
+        canDelete: function(userRole, userId, authorId, options) {
+            if (userRole === 'admin' || String(userId) === String(authorId)) {
+                return options.fn(this);
+            } else {
+                return options.inverse(this);
+            }
+        },
         if_eq: function(a, b, opts) {
             if (a === b) {
                 return opts.fn(this);
@@ -80,12 +87,16 @@ const mongoose = require('mongoose');
 mongoose.connect(mongoURI);
 console.log('Connected to MongoDB');
 
-const controllers = ['routeUser', 'routeCondo', 'routeReview'];
+const controllers = ['routeUser', 'routeCondo', 'routeReview', 'routeAdmin'];
 
 for(i = 0; i < controllers.length; i++){
     const ctrl = require('./controllers/' + controllers[i]); 
     ctrl.add(server);
 }
+
+const { errorHandler, notFoundHandler } = require('./middleware/error');
+server.use(notFoundHandler);
+server.use(errorHandler);
 
 //Only at the very end should the database be closed.
 function finalClose(){

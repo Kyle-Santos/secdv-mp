@@ -27,6 +27,11 @@ const condoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user',   // Reference to User model
+        required: true
+    }
 },{ versionKey: false, timestamps: true });
 
 // Create the Condo model

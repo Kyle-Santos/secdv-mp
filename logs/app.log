@@ -1,0 +1,125 @@
+[2025-11-22T15:35:08.935Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /admin
+[2025-11-22T15:36:30.195Z] ERROR - IP: ::1, Method: POST, URL: /create-account, Error: logValidationFailure is not a function
+Stack: TypeError: logValidationFailure is not a function
+    at C:\Users\user\repos\secdv-mp\middleware\validation.js:23:13
+    at Layer.handle [as handle_request] (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\user\repos\secdv-mp\middleware\validation.js:92:9
+    at Layer.handle [as handle_request] (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\index.js:346:12)
+[2025-11-22T15:41:50.010Z] VALIDATION FAILURE - Field: password, Value: user, Reason: Length must be between 8 and 128
+[2025-11-22T15:42:06.028Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Account created
+[2025-11-22T15:42:34.052Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-22T15:43:23.371Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-22T15:43:46.516Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Account created
+[2025-11-22T15:44:51.318Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful
+[2025-11-22T15:45:43.434Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /admin/
+[2025-11-22T15:48:14.843Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
+[2025-11-22T15:48:20.773Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful
+[2025-11-22T15:51:01.374Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
+[2025-11-22T15:51:33.075Z] AUTH FAILURE - Username: admin, IP: ::1, Reason: Invalid password
+[2025-11-22T15:51:38.215Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful
+[2025-11-22T15:52:24.192Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /admin/logs/dashboard
+[2025-11-22T15:52:29.666Z] ERROR - IP: ::1, Method: GET, URL: /admin/dashboard, Error: Failed to lookup view "admin-dashboard" in views directory "C:\Users\user\repos\secdv-mp\views"
+Stack: Error: Failed to lookup view "admin-dashboard" in views directory "C:\Users\user\repos\secdv-mp\views"
+    at Function.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\application.js:597:17)
+    at ServerResponse.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\response.js:1049:7)
+    at C:\Users\user\repos\secdv-mp\controllers\routeAdmin:37:13
+    at Layer.handle [as handle_request] (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\user\repos\secdv-mp\middleware\auth.js:75:9
+    at Layer.handle [as handle_request] (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\route.js:149:13)
+    at requireAuth (C:\Users\user\repos\secdv-mp\middleware\auth.js:45:9)
+    at Layer.handle [as handle_request] (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\layer.js:95:5)
+[2025-11-22T15:53:18.628Z] ERROR - IP: ::1, Method: GET, URL: /admin/view-logs, Error: Failed to lookup view "admin-logs" in views directory "C:\Users\user\repos\secdv-mp\views"
+Stack: Error: Failed to lookup view "admin-logs" in views directory "C:\Users\user\repos\secdv-mp\views"
+    at Function.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\application.js:597:17)
+    at ServerResponse.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\response.js:1049:7)
+    at C:\Users\user\repos\secdv-mp\controllers\routeAdmin:50:13
+    at Layer.handle [as handle_request] (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\route.js:149:13)
+    at C:\Users\user\repos\secdv-mp\middleware\auth.js:75:9
+    at Layer.handle [as handle_request] (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\route.js:149:13)
+    at requireAuth (C:\Users\user\repos\secdv-mp\middleware\auth.js:45:9)
+    at Layer.handle [as handle_request] (C:\Users\user\repos\secdv-mp\node_modules\express\lib\router\layer.js:95:5)
+[2025-11-22T15:57:34.720Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
+[2025-11-22T15:57:41.584Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-22T16:01:45.158Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-22T16:01:50.638Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful
+[2025-11-22T16:07:59.449Z] ERROR - IP: ::1, Method: GET, URL: /profile/user, Error: Missing helper: "eq"
+Stack: Error: Missing helper: "eq"
+    at Object.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\helper-missing.js:19:13)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at eval (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:23:231)
+    at prog (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at Object.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:61:13)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:31:49)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+[2025-11-22T16:14:53.929Z] ERROR - IP: ::1, Method: GET, URL: /profile/user, Error: opts.inverse is not a function
+Stack: TypeError: opts.inverse is not a function
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:42:29)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at eval (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:23:237)
+    at prog (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at Object.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:61:13)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:31:49)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+[2025-11-22T16:15:27.648Z] ERROR - IP: ::1, Method: GET, URL: /profile/user, Error: Parse error on line 100:
+...         {{#if (or (#if_eq ../data.role 
+-----------------------^
+Expecting 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 'INVALID'
+Stack: Error: Parse error on line 100:
+...         {{#if (or (#if_eq ../data.role 
+-----------------------^
+Expecting 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 'INVALID'
+    at Parser.parseError (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:267:19)
+    at Parser.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:336:30)
+    at parseWithoutProcessing (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:46:33)
+    at HandlebarsEnvironment.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:52:13)
+    at compileInput (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:508:19)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:517:18)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T16:21:59.065Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-22T16:36:25.625Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
+[2025-11-22T16:36:39.924Z] AUTH SUCCESS - Username: user2, IP: ::1, Reason: Account created
+[2025-11-22T16:36:48.480Z] AUTH SUCCESS - Username: user2, IP: ::1, Reason: Login successful
+[2025-11-22T16:45:02.171Z] AUTH SUCCESS - Username: user2, IP: ::1, Reason: User logged out
+[2025-11-22T16:45:28.571Z] AUTH SUCCESS - Username: whtaft_owner, IP: ::1, Reason: Account created
+[2025-11-22T16:45:46.607Z] AUTH SUCCESS - Username: torre_owner, IP: ::1, Reason: Account created
+[2025-11-22T16:46:05.221Z] AUTH SUCCESS - Username: burg_owner, IP: ::1, Reason: Account created
+[2025-11-22T16:46:18.411Z] AUTH SUCCESS - Username: green_owner, IP: ::1, Reason: Account created
+[2025-11-22T16:58:00.633Z] AUTH SUCCESS - Username: burg_owner, IP: ::1, Reason: Login successful
+[2025-11-22T17:00:35.531Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:04:33.975Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:11:25.550Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:14:40.736Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:15:32.463Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:17:09.133Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:17:30.058Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:20:58.175Z] ERROR - IP: ::1, Method: POST, URL: /delete-review, Error: ENOENT: no such file or directory, open 'C:\Users\user\repos\secdv-mp\controllers\logs\app.log'
+Stack: Error: ENOENT: no such file or directory, open 'C:\Users\user\repos\secdv-mp\controllers\logs\app.log'
+    at Object.writeFileSync (node:fs:2426:20)
+    at Object.appendFileSync (node:fs:2508:6)
+    at C:\Users\user\repos\secdv-mp\controllers\routeReview.js:68:20
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-11-22T17:21:55.237Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:23:29.684Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:24:22.973Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:26:45.805Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:26:57.570Z] REVIEW DELETED - ReviewID: 6921f1b9e2e830e6a5e946d7, CondoID: burgundy, DeletedBy: burg_owner (UserID: 6921e8cda3d47677d0fdc4e9)
+[2025-11-22T17:29:42.841Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json

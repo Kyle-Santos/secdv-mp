@@ -1,9 +1,9 @@
-function checkUser(){
-    if($("#username-display").text() !== $(".profile-name").text().replace(/✔️/g, '')){
-        $('#edit-profile-link').hide();
-        $('.edit-delete-icons').hide();
-    }
-}
+// function checkUser(){
+//     if($("#username-display").text() !== $(".profile-name").text().replace(/✔️/g, '')){
+//         $('#edit-profile-link').hide();
+//         $('.edit-delete-icons').hide();
+//     }
+// }
 
 $(document).ready(function(){
     $('.review-delete').click(function(){
@@ -15,18 +15,21 @@ $(document).ready(function(){
         console.log(condoId)
 
         
-          $.post(
+        $.post(
             'delete-review',
             {reviewId: reviewId, condoId: condoId},
-            function(data, status){
-                if(status === 'success'){
-                    console.log(data.deleted);
-                    post.fadeOut();
-                } else {
-                    alert('error');
-                }
-            } 
-        );
+        ).done(function(data) {
+            if (data.deleted) {
+                console.log('Review deleted:', data.msg);
+                post.fadeOut(); // remove the post from the UI
+            } else {
+                alert('Failed to delete review: ' + (data.msg || 'Unknown error'));
+            }
+        })
+        .fail(function(xhr, status, error) {
+            console.error('Server error:', status, error);
+            alert('Error deleting review. Please try again.');
+        });
     });
 
     $('.comment-delete').click(function(){

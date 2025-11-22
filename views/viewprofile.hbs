@@ -66,7 +66,7 @@
     <div class="profile-container">
         <div class="profile-info">
             <img class="profile-picture" src="{{data.picture}}"/>
-            <h1 class="profile-name">{{data.user}}<span class="verified-checkmark">{{#if_eq data.role "Condo Bro"}}{{else}}✔️{{/if_eq}}</span></h1>
+            <h1 class="profile-name">{{data.user}}<span class="verified-checkmark">{{#if_eq data.role "reviewer"}}{{else}}✔️{{/if_eq}}</span></h1>
             <div class="profile-nav">
             <ul>
                 <li><button class="edit-profile"><a id="edit-profile-link" href="edit-profile" class="hover-element">Edit Profile</a></button></li>
@@ -75,7 +75,7 @@
 
                 <h2 class="info-title"><br/>Intro</h2>
                 <p class="info-item"><b>Email:</b> {{data.email}}</p>
-                <p class="info-item"><b>Role:</b> {{#if_eq data.role 'Condo Bro'}}{{data.role}}{{else}}Establishment Owner of {{data.role}}{{/if_eq}}</p>
+                <p class="info-item"><b>Role:</b> {{#if_eq data.role 'reviewer'}}{{data.role}}{{else}}Establishment Owner of {{data.role}}{{/if_eq}}</p>
                 <p class="info-item"><b>Studied at</b> {{data.education}}</p>
                 <p class="info-item"><b>Lives in</b> {{data.city}}</p>
                 <div id="about-section">
@@ -128,7 +128,7 @@
                         <div>
                             <b>{{../data.user}}</b>
                             
-                            <br/>{{#if_eq ../data.role "Condo Bro"}}Condo Bro {{else}}Establishment Owner{{/if_eq}}
+                            <br/>{{#if_eq ../data.role "reviewer"}}Condo Bro {{else}}Establishment Owner{{/if_eq}}
                         </div>
                     </div>
                     <div class="react-post">
@@ -152,7 +152,7 @@
                         <div class="comment-header">
                             <div class="user-info">
                                 <a href="/profile/{{user.user}}"><b>{{user.user}}</b></a>
-                                <span class="verified-checkmark">{{#if_eq data.role "Condo Bro"}}{{else}}✔️{{/if_eq}}</span>
+                                <span class="verified-checkmark">{{#if_eq data.role "reviewer"}}{{else}}✔️{{/if_eq}}</span>
                                 {{date}}
                                 {{#if isEdited}}<i>Edited</i>{{/if}}
                             </div>

@@ -43,7 +43,7 @@ async function findUser(username, password){
         
         const user = await userModel.findOne({ user: username });
         if (!user) {
-            return [404, 'User not found', 0, "", "", "Condo Bro"];
+            return [404, 'User not found', 0, "", "", "reviewer"];
         }
 
         // Compare passwords
@@ -79,9 +79,9 @@ async function createAccount(username, password, picture, bio) {
         pass: encryptedPass,
         picture: picture,
         email: "none",
-        role: "Condo Bro",
+        role: "reviewer",
         school: "not specified",
-        city: "not specified,",
+        city: "not specified",
         bio: bio
         });
         

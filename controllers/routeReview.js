@@ -1,4 +1,5 @@
 const userModel = require('../models/User');
+const condoModel = require('../models/Condo');
 const reviewModel = require('../models/Review');
 const likeModel = require('../models/Like');
 const userFunctions = require('../models/userFunctions');
@@ -21,54 +22,59 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage }); // Store uploaded files in the 'uploads' directory
 
+const { requireAuth, checkOwnership, ROLES } = require('../middleware/auth');
+const { logAccessControlFailure, logError, writeToLog } = require('../middleware/error');
+
 function add(server){
-    server.post('/delete-review', function(req, resp){
-        var condoId = req.body.condoId;
-        var reviewId = req.body.reviewId;
-        console.log(reviewId);
-        console.log(condoId);
-        
-        console.log('Review to be Deleted: ' + reviewId);
+    server.post('/delete-review', 
+        requireAuth, 
+        checkOwnership(async (req) => {
+            const review = await reviewModel.findById(req.body.reviewId);
+            if (!review) throw new Error('Review not found');   
 
-        reviewModel.findById(reviewId).then(function(review){
-            let reviewTitle = review.title;
-            let reviewAuthor = review.author;
-            console.log('Title of deleted review: ' + reviewTitle);
-            console.log('ID of author: ' + reviewAuthor);
+            const condo = await condoModel.findOne({ id: req.body.condoId });
+            if (!condo) throw new Error('Condo not found');
 
-            userModel.findById(reviewAuthor).then(function(author){
-                let compareId = new ObjectId(reviewId);
-                let authorName = author.user;
-                let listOfReviews = new Array();
-                console.log('Name of author: ' + authorName);
+            // Return both IDs for ownership check
+            return { reviewAuthor: review.author, condoOwner: condo.owner };
+        }), 
+        async (req, res) => {
+            try {
+                const { condoId, reviewId } = req.body;
+                const currentUserId = req.session._id;
+                const currentUsername = req.session.username || 'Unknown';
 
-                console.log('Old list');
-                for(const item of author.reviews){
-                    console.log(item);
-                    if(!compareId.equals(item)){
-                        listOfReviews.push(item);
-                    }
+                const review = await reviewModel.findById(reviewId);
+                if (!review) {
+                    logAccessControlFailure(currentUsername, `Review:${reviewId}`, 'delete', 'Review not found', req.ip);
+                    return res.status(404).json({ deleted: 0, msg: 'Review not found' });
                 }
 
-                console.log('new list');
-                for(const newItem of listOfReviews){
-                    console.log(newItem);
-                }
+                const author = await userModel.findById(review.author);
 
-                author.reviews = listOfReviews;
-                author.save().then(function(result){
-                    likeModel.deleteMany({reviewId: reviewId}).then(function(like){
-                        reviewModel.deleteMany({_id: reviewId}).then(function(deletedReview){
-                            console.log('deleted');
-                            userFunctions.updateAverageRating(condoId).then(function(){
-                                resp.send({deleted: 1});
-                            });                
-                        });
-                    });
-                });
-            });
-        });
-    });
+                // Remove review from author's list
+                author.reviews = author.reviews.filter(item => String(item) !== String(reviewId));
+                await author.save();
+
+                // Delete review and associated likes
+                await likeModel.deleteMany({ reviewId });
+                await reviewModel.deleteOne({ _id: reviewId });
+
+                // Update condo average rating
+                await userFunctions.updateAverageRating(condoId);
+
+                // Log the deletion event
+                const logMsg = `[${new Date().toISOString()}] REVIEW DELETED - ReviewID: ${reviewId}, CondoID: ${condoId}, DeletedBy: ${currentUsername} (UserID: ${currentUserId})`;
+                writeToLog(logMsg);
+                console.log(logMsg);
+
+                res.send({ deleted: 1, msg: 'Review successfully deleted' });
+            } catch (err) {
+                logError(err, req);
+                res.status(500).send({ deleted: 0, msg: 'Server error' });
+            }
+        }
+    );
 
     server.post('/search-review', function(req, resp){
         var text = req.body.text;
