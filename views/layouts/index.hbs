@@ -17,22 +17,28 @@
             <script src="condo.js"></script>
             <script src="like.js"></script>
         {{else}}
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <script src="profile.js"></script>
-            <script src="like.js"></script>
-            <script src="condo.js"></script>
-            
-            {{#if isProfile}}
-                <link rel="stylesheet" href="profile.css">
-                <script src="checkUser.js"></script>
-            {{/if}}
+            {{#if isEditCondo}}
+                <link rel="stylesheet" href="editcondo.css">
+                <script src="editcondo.js"></script>
+            {{else}}
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <script src="profile.js"></script>
+                <script src="like.js"></script>
+                <script src="condo.js"></script>
+                
+                {{#if isProfile}}
+                    <link rel="stylesheet" href="profile.css">
+                    <script src="checkUser.js"></script>
+                {{/if}}
 
-            {{#if isEditProfile}}
-                <link rel="stylesheet" href="editprofile.css">
+                {{#if isEditProfile}}
+                    <link rel="stylesheet" href="editprofile.css">
+                {{/if}}
             {{/if}}
         {{/if}}
 
+        
         <link rel="stylesheet" href="general.css">
 
         <!-- Inter font extrabold-->

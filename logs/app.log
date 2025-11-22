@@ -123,3 +123,377 @@ Stack: Error: ENOENT: no such file or directory, open 'C:\Users\user\repos\secdv
 [2025-11-22T17:26:45.805Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
 [2025-11-22T17:26:57.570Z] REVIEW DELETED - ReviewID: 6921f1b9e2e830e6a5e946d7, CondoID: burgundy, DeletedBy: burg_owner (UserID: 6921e8cda3d47677d0fdc4e9)
 [2025-11-22T17:29:42.841Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:44:38.755Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:44:42.030Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:44:43.676Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:44:46.566Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:44:50.186Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:46:08.493Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:46:14.175Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:46:17.522Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:46:56.062Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:47:05.683Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:47:07.181Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:47:09.248Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:47:15.186Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:47:17.180Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:48:06.030Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:48:31.246Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:48:52.240Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:48:55.531Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:49:50.976Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Parse error on line 16:
+...{{#if_eq data.owner.toString() ../sessio
+-----------------------^
+Expecting 'ID', got 'INVALID'
+Stack: Error: Parse error on line 16:
+...{{#if_eq data.owner.toString() ../sessio
+-----------------------^
+Expecting 'ID', got 'INVALID'
+    at Parser.parseError (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:267:19)
+    at Parser.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:336:30)
+    at parseWithoutProcessing (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:46:33)
+    at HandlebarsEnvironment.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:52:13)
+    at compileInput (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:508:19)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:517:18)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:49:51.032Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:50:11.879Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Parse error on line 16:
+...{{#if_eq data.owner.toString() ../sessio
+-----------------------^
+Expecting 'ID', got 'INVALID'
+Stack: Error: Parse error on line 16:
+...{{#if_eq data.owner.toString() ../sessio
+-----------------------^
+Expecting 'ID', got 'INVALID'
+    at Parser.parseError (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:267:19)
+    at Parser.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:336:30)
+    at parseWithoutProcessing (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:46:33)
+    at HandlebarsEnvironment.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:52:13)
+    at compileInput (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:508:19)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:517:18)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:50:11.972Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:50:18.399Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:50:37.309Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:51:04.212Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:52:13.464Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:53:59.027Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:36)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:104)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:53:59.124Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:54:13.596Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:36)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:104)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:54:13.698Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:54:44.746Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:36)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:104)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:54:44.853Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:54:46.236Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:36)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:104)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:54:46.322Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:55:02.615Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:55)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:104)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:55:02.703Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:55:03.580Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:55)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:104)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:55:03.660Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:55:04.560Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:55)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:104)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:55:04.642Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:55:12.981Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:55)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:104)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:55:13.084Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:55:30.478Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:40:36)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:11:104)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:519:21)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T17:55:30.575Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:56:48.406Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:57:16.962Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:57:27.054Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:57:51.874Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:57:56.580Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:58:12.784Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:58:23.095Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:01.248Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:03.244Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:04.480Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:04.539Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:10.616Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:11.708Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:11.770Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:13.156Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:34.285Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:43.926Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:43.992Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:46.433Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:48.516Z] ERROR - IP: ::1, Method: GET, URL: /condo/2-torre, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:19)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at eval (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:39:104)
+    at prog (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at Object.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:61:13)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:30:49)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+[2025-11-22T17:59:48.573Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:51.706Z] ERROR - IP: ::1, Method: GET, URL: /condo/2-torre, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:19)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at eval (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:39:104)
+    at prog (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at Object.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:61:13)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:30:49)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+[2025-11-22T17:59:51.760Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T17:59:56.396Z] ERROR - IP: ::1, Method: GET, URL: /condo/2-torre, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:19)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at eval (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:39:104)
+    at prog (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at Object.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:61:13)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:30:49)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+[2025-11-22T17:59:56.457Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:00:16.221Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:00:16.259Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:00:18.360Z] ERROR - IP: ::1, Method: GET, URL: /condo/green-residence, Error: Cannot read properties of undefined (reading 'toString')
+Stack: TypeError: Cannot read properties of undefined (reading 'toString')
+    at Object.if_eq (C:\Users\user\repos\secdv-mp\app.js:39:19)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at eval (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:39:104)
+    at prog (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:268:12)
+    at execIteration (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:51:19)
+    at Object.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\helpers\each.js:61:13)
+    at Object.wrapper (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\internal\wrapHelper.js:15:19)
+    at Object.eval [as main] (eval at createFunctionContext (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:262:23), <anonymous>:30:49)
+    at main (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:208:32)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\runtime.js:212:12)
+[2025-11-22T18:00:18.456Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:00:19.541Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:00:19.607Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:00:20.202Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:00:21.516Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:00:21.580Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:01:17.593Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:01:21.749Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:01:23.905Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:01:25.146Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:02:57.539Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:00.247Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:02.247Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:04.005Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:05.268Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:06.513Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:27.022Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:29.021Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:29.090Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:30.435Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:48.033Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:03:53.718Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:04:06.015Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:04:38.689Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:04:43.150Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:04:46.825Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:04:46.891Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:04:48.956Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:05:16.848Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:05:22.846Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:08:38.444Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy/edit, Error: Parse error on line 35:
+...                  {{else}}          
+----------------------^
+Expecting 'OPEN_ENDBLOCK', got 'INVERSE'
+Stack: Error: Parse error on line 35:
+...                  {{else}}          
+----------------------^
+Expecting 'OPEN_ENDBLOCK', got 'INVERSE'
+    at Parser.parseError (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:267:19)
+    at Parser.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:336:30)
+    at parseWithoutProcessing (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:46:33)
+    at HandlebarsEnvironment.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:52:13)
+    at compileInput (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:508:19)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:517:18)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T18:08:39.497Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy/edit, Error: Parse error on line 35:
+...                  {{else}}          
+----------------------^
+Expecting 'OPEN_ENDBLOCK', got 'INVERSE'
+Stack: Error: Parse error on line 35:
+...                  {{else}}          
+----------------------^
+Expecting 'OPEN_ENDBLOCK', got 'INVERSE'
+    at Parser.parseError (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:267:19)
+    at Parser.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:336:30)
+    at parseWithoutProcessing (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:46:33)
+    at HandlebarsEnvironment.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:52:13)
+    at compileInput (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:508:19)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:517:18)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T18:11:12.027Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy/edit, Error: Parse error on line 56:
+...    </body></html>
+----------------------^
+Expecting 'OPEN_ENDBLOCK', got 'EOF'
+Stack: Error: Parse error on line 56:
+...    </body></html>
+----------------------^
+Expecting 'OPEN_ENDBLOCK', got 'EOF'
+    at Parser.parseError (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:267:19)
+    at Parser.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:336:30)
+    at parseWithoutProcessing (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:46:33)
+    at HandlebarsEnvironment.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:52:13)
+    at compileInput (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:508:19)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:517:18)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T18:11:13.501Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy/edit, Error: Parse error on line 56:
+...    </body></html>
+----------------------^
+Expecting 'OPEN_ENDBLOCK', got 'EOF'
+Stack: Error: Parse error on line 56:
+...    </body></html>
+----------------------^
+Expecting 'OPEN_ENDBLOCK', got 'EOF'
+    at Parser.parseError (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:267:19)
+    at Parser.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:336:30)
+    at parseWithoutProcessing (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:46:33)
+    at HandlebarsEnvironment.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:52:13)
+    at compileInput (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:508:19)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:517:18)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T18:11:20.958Z] ERROR - IP: ::1, Method: GET, URL: /condo/burgundy/edit, Error: Parse error on line 56:
+...    </body></html>
+----------------------^
+Expecting 'OPEN_ENDBLOCK', got 'EOF'
+Stack: Error: Parse error on line 56:
+...    </body></html>
+----------------------^
+Expecting 'OPEN_ENDBLOCK', got 'EOF'
+    at Parser.parseError (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:267:19)
+    at Parser.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:336:30)
+    at parseWithoutProcessing (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:46:33)
+    at HandlebarsEnvironment.parse (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:52:13)
+    at compileInput (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:508:19)
+    at ret (C:\Users\user\repos\secdv-mp\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:517:18)
+    at ExpressHandlebars._renderTemplate (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:244:16)
+    at ExpressHandlebars.<anonymous> (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:156:31)
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\user\repos\secdv-mp\node_modules\express-handlebars\dist\express-handlebars.js:10:58)
+[2025-11-22T18:14:40.582Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:15:21.549Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:19:33.109Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:20:01.676Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-22T18:21:39.112Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json

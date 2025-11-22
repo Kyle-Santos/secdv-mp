@@ -468,3 +468,28 @@ form > .star-rating svg {
 .comment-button:hover {
     background-color: #45a049;
 }
+
+
+
+
+.owner-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .owner-controls .edit-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .owner-controls .edit-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }

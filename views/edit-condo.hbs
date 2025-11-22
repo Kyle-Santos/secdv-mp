@@ -1,0 +1,20 @@
+<div class="edit-condo-body">
+    <h1>{{title}}</h1>
+    <form method="POST" action="/condo/{{data.id}}/edit" enctype="multipart/form-data">
+        <div>
+            <label>Name:</label>
+            <input type="text" name="name" value="{{data.name}}" required>
+        </div>
+        <div>
+            <label>Address:</label>
+            <input type="text" name="address" value="{{data.address}}" required>
+        </div>
+        <div>
+            <label>Description:</label>
+            <textarea name="description" rows="10" required>{{data.description}}</textarea>
+        </div>
+        <div>
+            <button type="submit">Save Changes</button>
+        </div>
+    </form>
+</div>

@@ -1,11 +1,3 @@
-Handlebars.registerHelper('ifGreaterThanOne', function(num, options) {
-if (num > 1) {
-return options.fn(this);
-} else {
-return options.inverse(this);
-}
-});
-
 <div class="create-review pop-up" id="create-review">
 
     <div>
@@ -73,6 +65,11 @@ return options.inverse(this);
 
 <div class="main-body">
     <div class="main-left">
+        {{#is_condo_owner data.owner session._id}}
+        <div class="owner-controls">
+            <a href="/condo/{{data.id}}/edit" class="edit-button">Edit Condo Details</a>
+        </div>
+        {{/is_condo_owner}}
         <div class="condo-name">
             <h1>{{{data.name}}}</h1>
         </div>

@@ -35,15 +35,19 @@ server.engine('hbs', handlebars.engine({
     extname: 'hbs',
     helpers: {
         // Define your custom helper functions here
-        canDelete: function(userRole, userId, authorId, options) {
-            if (userRole === 'admin' || String(userId) === String(authorId)) {
-                return options.fn(this);
-            } else {
-                return options.inverse(this);
-            }
-        },
         if_eq: function(a, b, opts) {
             if (a === b) {
+                return opts.fn(this);
+            } else {
+                return opts.inverse(this);
+            }
+        },
+        is_condo_owner: function(a, b, opts) {
+            if (a === undefined || b === undefined) {
+                return opts.inverse(this);
+            }
+
+            if (a.toString() === b.toString()) {
                 return opts.fn(this);
             } else {
                 return opts.inverse(this);
