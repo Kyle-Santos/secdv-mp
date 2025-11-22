@@ -32,7 +32,10 @@ function add(server){
                 isHome: true,
                 condos: condos
             });
-        });
+        }).catch(function(err){
+            console.error('Error fetching condos:', err);
+            resp.status(500).send('Internal Server Error');
+        }); 
     });
     
     // create account POST

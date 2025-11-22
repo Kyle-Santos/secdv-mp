@@ -1,6 +1,8 @@
 //Install Command:
 //npm init
-//npm i express express-handlebars body-parser mongoose multer bcrypt express-session connect-mongodb-session
+//npm i express express-handlebars body-parser mongoose multer bcrypt express-session connect-mongodb-session dotenv mongodb
+
+require('dotenv').config();
 
 const express = require('express');
 const server = express();
@@ -16,7 +18,7 @@ const mongoStore = require('connect-mongodb-session')(session);
 const mongoURI = process.env.MONGODB_URI;
 
 server.use(session({
-    secret: 'penguin-banana-jazz-1234',
+    secret: process.env.SESSION_SECRET,
     saveUninitialized: false, 
     resave: false,
     store: new mongoStore({
@@ -76,6 +78,7 @@ server.use(express.static('public'));
 
 const mongoose = require('mongoose');
 mongoose.connect(mongoURI);
+console.log('Connected to MongoDB');
 
 const controllers = ['routeUser', 'routeCondo', 'routeReview'];
 
