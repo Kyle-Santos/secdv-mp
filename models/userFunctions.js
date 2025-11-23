@@ -85,9 +85,10 @@ async function findUser(username, password){
     }
 }
 
-async function createAccount(username, password, picture, bio) {
+async function createAccount(username, password, picture, bio, role, questions, answers) {
     // encrypt password
     let encryptedPass = "";
+
 
     if (!isComplex(password))
         return [false, 400, 'Password must contain upper-case, lower-case, number and special character.'];
@@ -99,6 +100,10 @@ async function createAccount(username, password, picture, bio) {
         });
     });
 
+    const answerHashes = await Promise.all(
+        answers.map(a => bcrypt.hash(a, saltRounds))
+    );
+
     const user = userModel({
         user: username,
         pass: encryptedPass,
@@ -107,7 +112,9 @@ async function createAccount(username, password, picture, bio) {
         role: "reviewer",
         school: "not specified",
         city: "not specified",
-        bio: bio
+        bio: bio,
+        securityQuestions: questions, // plain questions
+        securityAnswers: answerHashes // hashed answers
         });
         
         return user.save().then(function(login) {
