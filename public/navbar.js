@@ -64,12 +64,51 @@ $(document).ready(function(){
 
         var iconPath = $('input[name="avatar"]:checked').closest('.select-avatar').find('img.avatar').attr('src');
 
+        // gather security answers – questions are sent by index so the server knows which were picked
+        const questionBank = [
+            // --- q1 block ---
+            "What was the name of your first pet?",
+            "In what city did you meet your first significant other?",
+            "What is the last name of your childhood teacher?",
+            "What was the name of the street your childhood friend lived on?",
+            "What was the model of your first car?",
+            "What was the name of your first stuffed animal or toy?",
+
+            // --- q2 block ---
+            "What was the name of the town where your grandparents lived?",
+            "What is your oldest cousin's first name?",
+            "What is the name of a place you've always wanted to visit?",
+            "What is the name of the hospital where you were born?",
+            "What was the first city you visited?",
+            "What is the name of a restaurant you frequent?",
+
+            // --- q3 block ---
+            "What was the name of the first school you attended?",
+            "What was the name of the first concert you attended?",
+            "What is the name of the friend you've known the longest?",
+            "What is the name of a place you celebrated a special occasion at?",
+            "What was the name of your first roommate?",
+            "What was the first dish you've successfully made?"
+        ];
+        const qIndex = [
+            parseInt($('select[name="q1"]').val(), 10),
+            6 + parseInt($('select[name="q2"]').val(), 10),   // offset by 6
+            12 + parseInt($('select[name="q3"]').val(), 10)   // offset by 12
+        ];
+        const answers = [
+            $('input[name="a1"]').val().trim(),
+            $('input[name="a2"]').val().trim(),
+            $('input[name="a3"]').val().trim()
+        ];
+
         // Get form data
         const formData = {
             username: $("#create-account-form input[name='username']").val(),
             password: $("#create-account-form input[name='password']").val(),
             picture: iconPath,
             bio: $("#create-account-form textarea[name='description']").val(),
+            questions: qIndex,   // array of 0-5
+            answers:   answers   // parallel array of strings
         };
 
         $("#create-account").hide();
