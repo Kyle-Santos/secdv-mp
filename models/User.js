@@ -10,6 +10,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    passwordHistory:   [{ type: String }],        // old hashes
+    passwordChangedAt: { type: Date, default: Date.now },
+    failedAttempts:    { type: Number, default: 0 },
+    lockoutUntil:      { type: Date },            // future date → locked
+    lastLoginAt:       { type: Date },            
+    lastLoginIp:       { type: String },          
+    securityQuestions: [String],                  // plain questions
+    securityAnswers:   [{ type: String }],        // hashed answers
     picture: {type: String},
     bio: {type: String},
     email: {type: String},
