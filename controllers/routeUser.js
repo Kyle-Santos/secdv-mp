@@ -249,7 +249,8 @@ function add(server){
             });
         }
         // password validation
-        if (newData.pass !== undefined) {
+        if (newData.pass !== undefined && newData.pass !== '') {
+            // Validate password length
             await new Promise((resolve, reject) => {
                 validateTextLength('pass', 8, 128)(req, resp, (err) => {
                     if (resp.headersSent) return;
@@ -258,20 +259,30 @@ function add(server){
                 });
             });
 
+            // Check password complexity and return proper response
+            if (!isComplex(newData.pass)) {
+                return resp.status(400).json({
+                    success: false,
+                    message: 'Password must contain upper-case, lower-case, number and special character.'
+                });
+            }
+
+            // If complex, hash the password
             let encryptedPass = "";
-        
-        
-            if (!isComplex(newData.pass))
-                return [false, 400, 'Password must contain upper-case, lower-case, number and special character.'];
-        
             await new Promise((resolve, reject) => {
                 bcrypt.hash(newData.pass, 10, function(err, hash) { 
+                    if (err) {
+                        console.error("Error hashing password:", err);
+                        return resp.status(500).json({
+                            success: false,
+                            message: 'Error processing password'
+                        });
+                    }
                     encryptedPass = hash;
-                    resolve(); // Resolve the promise when hashing is complete
+                    resolve();
                 });
             });
             
-            // User123$
             newData.pass = encryptedPass;   
         }
 
