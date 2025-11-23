@@ -113,11 +113,11 @@ textarea {
     display: flex;
 }
 
-.icon:hover{
+.right-nav.icon:hover{
     background-color: #3f3f3f;
 }
 
-.icon{
+.right-nav .icon{
     border-radius:5px;
     height: 100%;
 }
@@ -323,7 +323,7 @@ div.login-font {
     z-index: 1;
 }
 
-.icon.highlighted .nav-dropdown {
+.right-nav.icon.highlighted .nav-dropdown {
     display: block;
 }
 

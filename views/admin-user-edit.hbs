@@ -1,0 +1,42 @@
+<div class="admin-dashboard">
+
+    <h1>Edit User: {{user.user}}</h1>
+
+    <div class="user-management-form">
+
+        <form method="POST" action="/admin/users/{{user._id}}/edit">
+
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" name="user" value="{{user.user}}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email" value="{{user.email}}">
+            </div>
+
+            <div class="form-group">
+                <label>City:</label>
+                <input type="text" name="city" value="{{user.city}}">
+            </div>
+
+            <div class="form-group">
+                <label>Role:</label>
+                <select name="role" required>
+                    <option value="owner" {{#if_eq user.role "owner"}}selected{{/if_eq}}>Owner</option>
+                    <option value="admin" {{#if_eq user.role "admin"}}selected{{/if_eq}}>Admin</option>
+                    <option value="visitor" {{#if_eq user.role "visitor"}}selected{{/if_eq}}>Visitor</option>
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="create-user-btn">Save Changes</button>
+                <a href="/admin/dashboard" class="cancel-btn">Cancel</a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,48 @@
+<div class="admin-dashboard">
+    <h1>Admin Dashboard</h1>
+
+    <div class="admin-welcome">
+        <p>Welcome back, <strong>{{username}}</strong> 👋</p>
+    </div>
+
+    <!-- Top Cards -->
+    <div class="admin-cards">
+        <a class="admin-card" href="/admin/logs">
+            <div class="icon">📄</div>
+            <h2>System Logs</h2>
+            <p>View access logs and error logs.</p>
+        </a>
+    </div>
+
+    <!-- Users Table Section -->
+    <div class="user-management">
+        <div class="user-header">
+            <h2>Users</h2>
+            <button id="createUserBtn" class="create-user-btn">+ Create New User</button>
+        </div>
+        
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Date Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr>
+                    <td>{{user}}</td>
+                    <td>{{role}}</td>
+                    <td>{{createdAt}}</td>
+                    <td>
+                        <button class="edit-btn" data-id="{{_id}}">Edit</button>
+                        <button class="delete-btn" data-id="{{_id}}">Delete</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -131,11 +131,11 @@ $(document).ready(function(){
     $("#create-account").hide();
 
     // Dropdown magic
-    $(".icon").hover(function(){
+    $(".right-nav .icon").hover(function(){
         $(this).toggleClass("highlighted");
     });
 
-    $(".icon").hover(function(){
+    $(".right-nav .icon").hover(function(){
         $(".nav-dropdown").toggle($(this).hasClass("highlighted"));
     });
 
