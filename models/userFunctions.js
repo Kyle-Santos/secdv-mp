@@ -7,6 +7,14 @@ const condoModel = require('../models/Condo');
 const bcrypt = require('bcrypt'); 
 const saltRounds = 10;
 
+function isComplex(pwd) {
+  const hasUpper  = /[A-Z]/.test(pwd);
+  const hasLower  = /[a-z]/.test(pwd);
+  const hasDigit  = /[0-9]/.test(pwd);
+  const hasSpecial= /[^A-Za-z0-9]/.test(pwd);
+  return hasUpper && hasLower && hasDigit && hasSpecial;
+}
+
 async function updateAverageRating(condoId){
     let total = 0;
     let averageRating;
@@ -43,16 +51,30 @@ async function findUser(username, password){
         
         const user = await userModel.findOne({ user: username });
         if (!user) {
-            return [404, 'User not found', 0, "", "", "reviewer"];
+            return [401, 'Invalid username and/or password', 0, "", "", "reviewer"];
         }
+
+        if (user.lockoutUntil && user.lockoutUntil > Date.now())
+            return [423, 'Account locked – too many failed attempts.', user];
 
         // Compare passwords
         const passwordMatch = await bcrypt.compare(password, user.pass);
 
         if (!passwordMatch) {
-            return [401, 'Invalid password', user];
+            // record failure
+            user.failedAttempts = (user.failedAttempts || 0) + 1;
+            if (user.failedAttempts >= 5){
+            user.lockoutUntil = new Date(Date.now() + 15*60*1000); // 15-min lock
+            }
+            await user.save();
+            return [401, 'Invalid username and/or password', user];
         }
 
+        user.failedAttempts = 0;
+        user.lockoutUntil   = undefined;
+        user.lastLoginAt    = new Date();
+        user.lastLoginIp    = (arguments[2] /* ip injected by route */ || '');
+        await user.save();
         // Authentication successful
         return [200, 'Login successful', user];
         //res.status(200).json({ message: 'Login successful', user: user });
@@ -66,6 +88,9 @@ async function findUser(username, password){
 async function createAccount(username, password, picture, bio) {
     // encrypt password
     let encryptedPass = "";
+
+    if (!isComplex(password))
+        return [false, 400, 'Password must contain upper-case, lower-case, number and special character.'];
 
     await new Promise((resolve, reject) => {
         bcrypt.hash(password, saltRounds, function(err, hash) { 
@@ -105,6 +130,46 @@ async function createAccount(username, password, picture, bio) {
                 //resp.status(500).send({ success: false, message: 'Error creating account' });
             }
         });
+}
+
+// ---------- 3.  HISTORY + MIN-AGE ----------
+async function changePassword(userId, newPlain){
+  const user = await userModel.findById(userId);
+  if (!user) throw new Error('User not found');
+
+  const oneDayAgo = new Date(Date.now() - 24*60*60*1000);
+  if (user.passwordChangedAt && user.passwordChangedAt > oneDayAgo)
+    throw new Error('Password can only be changed once per 24 h.');
+
+  // prevent reuse
+  for (const oldHash of (user.passwordHistory||[])){
+    if (await bcrypt.compare(newPlain, oldHash))
+      throw new Error('You have used that password recently.');
+  }
+
+  if (!isComplex(newPlain))
+    throw new Error('Password does not meet complexity rules.');
+
+  // push current hash into history (keep last 5)
+  user.passwordHistory = [user.pass, ...(user.passwordHistory||[])].slice(0,5);
+  user.pass            = await bcrypt.hash(newPlain, saltRounds);
+  user.passwordChangedAt = new Date();
+  await user.save();
+  return true;
+}
+
+// ---------- 4.  RESET WITH SECURITY QUESTIONS ----------
+// we store the answers hashed exactly like passwords
+async function checkSecurityAnswers(userId, answers /* array of strings */){
+  const user = await userModel.findById(userId).select('securityAnswers');
+  if (!user || !user.securityAnswers || user.securityAnswers.length !== answers.length)
+    return false;
+
+  for (let i=0;i<answers.length;i++){
+    if (!await bcrypt.compare(answers[i], user.securityAnswers[i]))
+      return false;
+  }
+  return true;
 }
 
 async function createComment(userId, content, date, reviewId) {
@@ -204,9 +269,12 @@ async function processReviews(reviews, userId){
     return reviews;
 }
 
+module.exports.isComplex = isComplex; 
 module.exports.processReviews = processReviews;
 module.exports.findUser = findUser;
 module.exports.createAccount = createAccount;
+module.exports.changePassword         = changePassword;
+module.exports.checkSecurityAnswers   = checkSecurityAnswers;
 module.exports.filterEditData = filterEditData;
 module.exports.createReview = createReview;
 module.exports.createComment = createComment;
