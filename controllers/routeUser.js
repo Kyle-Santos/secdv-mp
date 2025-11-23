@@ -62,21 +62,50 @@ function add(server){
         validateUsername('username'),  // Only alphanumeric, underscore, hyphen
         validateTextLength('password', 8, 128),  // Password length
         validateTextLength('picture', 0, 500),   // Optional picture URL
-        validateTextLength('bio', 0, 500)        // Optional bio
+        validateTextLength('bio', 0, 500),        // Optional bio
+        validateTextLength('answers', 3, 50)   // each answer
     ], async (req, resp) => {
         let createSuccess, createStatus, createMessage;
 
         // Get role from request, default to customer
         const role = req.body.role || ROLES.REVIEWER;
-
-        // Call your existing createAccount function with role
-        [createSuccess, createStatus, createMessage] = await userFunctions.createAccount(
-            req.body.username, 
-            req.body.password, 
-            req.body.picture, 
-            req.body.bio,
-            role
-        );
+        const questionBank = [
+                    // --- q1 block ---
+                    "What was the name of your first pet?",
+                    "In what city did you meet your first significant other?",
+                    "What is the last name of your childhood teacher?",
+                    "What was the name of the street your childhood friend lived on?",
+                    "What was the model of your first car?",
+                    "What was the name of your first stuffed animal or toy?",
+        
+                    // --- q2 block ---
+                    "What was the name of the town where your grandparents lived?",
+                    "What is your oldest cousin's first name?",
+                    "What is the name of a place you've always wanted to visit?",
+                    "What is the name of the hospital where you were born?",
+                    "What was the first city you visited?",
+                    "What is the name of a restaurant you frequent?",
+        
+                    // --- q3 block ---
+                    "What was the name of the first school you attended?",
+                    "What was the name of the first concert you attended?",
+                    "What is the name of the friend you've known the longest?",
+                    "What is the name of a place you celebrated a special occasion at?",
+                    "What was the name of your first roommate?",
+                    "What was the first dish you've successfully made?"
+                ];
+                const questions = req.body.questions.map(i => questionBank[parseInt(i, 10)]);
+                const answers   = req.body.answers;
+                // Call your existing createAccount function with role
+                [createSuccess, createStatus, createMessage] = await userFunctions.createAccount(
+                    req.body.username, 
+                    req.body.password, 
+                    req.body.picture, 
+                    req.body.bio,
+                    role,
+                    questions,
+                    answers
+                );
 
         // Log authentication attempt (Requirement 2.4.5)
         const ipAddress = req.ip || req.connection.remoteAddress;
