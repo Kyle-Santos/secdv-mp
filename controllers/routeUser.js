@@ -5,6 +5,8 @@ const userModel = require('../models/User');
 const condoModel = require('../models/Condo');
 const reviewModel = require('../models/Review');
 const userFunctions = require('../models/userFunctions');
+const bcrypt = require('bcrypt');                       // needed for token reset
+const { changePassword, checkSecurityAnswers } = require('../models/userFunctions');
 
 // Import middleware
 const { requireAuth, requireRole, ROLES } = require('../middleware/auth');
@@ -93,6 +95,11 @@ function add(server){
         
         if (findStatus === 200) {
             // Set session
+            let lastInfo = '';
+            if (user.lastLoginAt) {
+                lastInfo = `Last login: ${user.lastLoginAt.toLocaleString()}`;
+                if (user.lastLoginIp) lastInfo += ` from ${user.lastLoginIp}`;
+            }
             if (rememberMe === 'true') {
                 req.session.cookie.expires = new Date(Date.now() + 21 * 24 * 60 * 60 * 1000); // 21 days 
             }
@@ -107,7 +114,7 @@ function add(server){
             logAuthAttempt(username, true, 'Login successful', ipAddress);
 
             res.status(findStatus).json({
-                message: findMessage, 
+                message: `${findMessage} ${lastInfo}`, 
                 picture: user.picture,
                 role: user.role
             });
