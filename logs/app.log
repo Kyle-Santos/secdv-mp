@@ -611,3 +611,14 @@ Expecting 'OPEN_ENDBLOCK', got 'EOF'
 [2025-11-23T07:25:18.599Z] REVIEW DELETED - ReviewID: 6922b64abf6897e40bbb7b09, CondoID: burgundy, DeletedBy: admin (UserID: 6921da32586f3d82e157553d)
 [2025-11-23T07:25:34.304Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
 [2025-11-23T07:25:42.826Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-23T13:27:54.424Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-23T13:28:14.814Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-23T15:51:56.979Z] VALIDATION FAILURE - Field: user, Value: undefined, Reason: Field is required
+[2025-11-23T15:57:40.112Z] VALIDATION FAILURE - Field: user, Value: undefined, Reason: Field is required
+[2025-11-23T16:01:55.227Z] VALIDATION FAILURE - Field: bio, Value: undefined, Reason: Field is required
+[2025-11-23T16:11:36.575Z] VALIDATION FAILURE - Field: user, Value: , Reason: Length must be between 3 and 50
+[2025-11-23T16:16:56.216Z] VALIDATION FAILURE - Field: pass, Value: user, Reason: Length must be between 8 and 100
+[2025-11-23T16:26:07.572Z] VALIDATION FAILURE - Field: user, Value: undefined, Reason: Field is required
+[2025-11-23T16:34:47.468Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /favicon.ico
+[2025-11-23T16:39:53.201Z] VALIDATION FAILURE - Field: pass, Value: pass, Reason: Length must be between 8 and 128
+[2025-11-23T16:40:08.778Z] VALIDATION FAILURE - Field: user, Value: user#, Reason: Contains invalid characters. Only letters, numbers, underscores, and hyphens are allowed

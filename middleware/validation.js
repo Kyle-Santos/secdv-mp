@@ -18,7 +18,7 @@ function validateTextLength(field, minLength, maxLength) {
         }
 
         const length = value.toString().length;
-        
+
         if (length < minLength || length > maxLength) {
             logValidationFailure(field, value, `Length must be between ${minLength} and ${maxLength}`);
             return res.status(400).json({ 
@@ -123,9 +123,9 @@ function validateRating(field) {
 }
 
 // Validate username format (alphanumeric, underscore, hyphen only)
-function validateUsername() {
+function validateUsername(field) {
     return validateAllowedCharacters(
-        'username', 
+        field, 
         '^[a-zA-Z0-9_-]+$',
         'Only letters, numbers, underscores, and hyphens are allowed'
     );

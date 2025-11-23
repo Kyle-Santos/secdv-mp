@@ -143,17 +143,18 @@ $(document).ready(function() {
         // Get uploaded image if available
         var image = $("#profile-photo").prop('files')[0];
 
-        const name = $("#editProfileForm #name").val();
+        const user = $("#editProfileForm #name").val();
         const email = $("#editProfileForm #email").val();
         const bio = $("#editProfileForm #bio").val();
         const education = $("#editProfileForm #education").val();
         const city = $("#editProfileForm #city").val();
+        const pass = $("#editProfileForm #pass").val();
 
         var formData = {};
 
-        if (name !== "") {
-            if (!name.includes(' ')) 
-                formData.name = name;
+        if (user !== "") {
+            if (!user.includes(' ')) 
+                formData.user = user;
             else {
                 alert("Username can't have any space");
                 return;
@@ -163,6 +164,7 @@ $(document).ready(function() {
         if (bio !== "") formData.bio = bio;
         if (education !== "") formData.education = education;
         if (city !== "") formData.city = city;
+        if (pass !== "") formData.pass = pass;
 
         if (Object.keys(formData).length === 0 && !image) {
             alert("Nothing was changed.");
@@ -183,7 +185,7 @@ $(document).ready(function() {
                 contentType: false,
                 success: function(response) {
                     console.log(response);
-                    formData.imagePath = `images/client-uploaded-files/${image.name}`;
+                    formData.picture = `images/client-uploaded-files/${image.name}`;
                     editprofile(formData);
                 },
                 error: function(xhr, status, error) {

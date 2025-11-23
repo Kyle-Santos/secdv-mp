@@ -192,15 +192,30 @@ function add(server){
     // Submit profile edit - Requires authentication + validation (Requirements 2.3.x)
     server.patch('/edit-profile-submit', [
         requireAuth,
-        validateTextLength('user', 3, 50),      // Username length
-        validateTextLength('bio', 0, 500),      // Bio length (optional)
-        validateTextLength('picture', 0, 500),  // Picture URL (optional)
-        validateEmail('email'),                 // Email format (optional)
-        validateTextLength('education', 0, 200), // Education (optional)
-        validateTextLength('city', 0, 100)      // City (optional)
     ], async (req, resp) => {
-        const newData = userFunctions.filterEditData(req.body);
-
+        const newData = req.body;
+        
+        if (newData.user !== undefined) {
+            await new Promise((resolve, reject) => {
+                validateUsername('user')(req, resp, (err) => {
+                    if (resp.headersSent) return; // stop execution if validator already responded
+                    if (err) reject(err);
+                    else resolve();
+                });
+            });
+        }
+        // password validation
+        if (newData.pass !== undefined) {
+            await new Promise((resolve, reject) => {
+                validateTextLength('pass', 8, 128)(req, resp, (err) => {
+                    if (resp.headersSent) return;
+                    if (err) reject(err);
+                    else resolve();
+                });
+            });
+        }
+            
+        console.log("Updating user with data:", newData);
         userModel.updateOne({ "user": req.session.username }, { $set: newData })
             .then(result => {
                 console.log("Update successful:", result);

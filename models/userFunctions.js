@@ -125,15 +125,16 @@ async function createComment(userId, content, date, reviewId) {
 }
 
 function filterEditData(userData){
-    const { name, email, bio, education, city, imagePath } = userData;
+    const { user, email, bio, education, city, picture, pass } = userData;
     // Filter out null values
     const newData = {};
-    if (name !== undefined) newData.user = name;
+    if (user !== undefined && user !== "") newData.user = user;
     if (email !== undefined) newData.email = email;
     if (bio !== undefined) newData.bio = bio;
     if (education !== undefined) newData.education = education;
     if (city !== undefined) newData.city = city;
-    if (imagePath !== null && imagePath !== undefined) newData.picture = imagePath;
+    if (picture !== null && picture !== undefined && picture !== "") newData.picture = picture;
+    if (pass !== undefined && pass !== "") newData.pass = pass;
 
     return newData;
 }
