@@ -622,3 +622,26 @@ Expecting 'OPEN_ENDBLOCK', got 'EOF'
 [2025-11-23T16:34:47.468Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /favicon.ico
 [2025-11-23T16:39:53.201Z] VALIDATION FAILURE - Field: pass, Value: pass, Reason: Length must be between 8 and 128
 [2025-11-23T16:40:08.778Z] VALIDATION FAILURE - Field: user, Value: user#, Reason: Contains invalid characters. Only letters, numbers, underscores, and hyphens are allowed
+[2025-11-23T16:46:13.578Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-23T16:46:24.028Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful
+[2025-11-23T16:46:53.454Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
+[2025-11-23T16:47:19.469Z] AUTH SUCCESS - Username: whtaft_owner, IP: ::1, Reason: Login successful
+[2025-11-23T16:47:56.984Z] REVIEW DELETED - ReviewID: 6921de0ad28e01f44d5dad82, CondoID: wh-taft, DeletedBy: whtaft_owner (UserID: 6921e8a8a3d47677d0fdc4e1)
+[2025-11-23T16:48:16.228Z] AUTH SUCCESS - Username: whtaft_owner, IP: ::1, Reason: User logged out
+[2025-11-23T16:48:22.850Z] AUTH FAILURE - Username: user, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T16:48:27.123Z] AUTH FAILURE - Username: user, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T16:48:33.934Z] AUTH FAILURE - Username: user, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T16:48:42.911Z] AUTH FAILURE - Username: user, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T16:51:45.679Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-23T16:57:48.872Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-23T16:57:53.645Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-23T17:00:39.821Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-23T17:00:46.019Z] AUTH FAILURE - Username: user, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:00:51.174Z] AUTH FAILURE - Username: user1231, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:01:33.008Z] VALIDATION FAILURE - Field: undefined, Value: undefined, Reason: Field is required
+[2025-11-23T17:02:22.975Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-23T17:03:24.783Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-23T17:03:40.035Z] VALIDATION FAILURE - Field: password, Value: user, Reason: Length must be between 8 and 128
+[2025-11-23T17:03:50.097Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Password must contain upper-case, lower-case, number and special character.
+[2025-11-23T17:04:07.683Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Password must contain upper-case, lower-case, number and special character.
+[2025-11-23T17:04:18.568Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Password must contain upper-case, lower-case, number and special character.

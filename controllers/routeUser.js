@@ -13,6 +13,14 @@ const { requireAuth, requireRole, ROLES } = require('../middleware/auth');
 const { validateTextLength, validateEmail, validateUsername } = require('../middleware/validation');
 const { logAuthAttempt, logAccessControlFailure } = require('../middleware/error');
 
+function isComplex(pwd) {
+    const hasUpper  = /[A-Z]/.test(pwd);
+    const hasLower  = /[a-z]/.test(pwd);
+    const hasDigit  = /[0-9]/.test(pwd);
+    const hasSpecial= /[^A-Za-z0-9]/.test(pwd);
+    return hasUpper && hasLower && hasDigit && hasSpecial;
+}
+
 function add(server){
     // Check login status - no auth required for this endpoint
     server.get('/loggedInStatus', function(req, resp){
@@ -51,7 +59,7 @@ function add(server){
     
     // Create account - WITH VALIDATION (Requirements 2.3.x)
     server.post('/create-account', [
-        validateUsername(),  // Only alphanumeric, underscore, hyphen
+        validateUsername('username'),  // Only alphanumeric, underscore, hyphen
         validateTextLength('password', 8, 128),  // Password length
         validateTextLength('picture', 0, 500),   // Optional picture URL
         validateTextLength('bio', 0, 500)        // Optional bio
@@ -59,7 +67,7 @@ function add(server){
         let createSuccess, createStatus, createMessage;
 
         // Get role from request, default to customer
-        const role = req.body.role || ROLES.CUSTOMER;
+        const role = req.body.role || ROLES.REVIEWER;
 
         // Call your existing createAccount function with role
         [createSuccess, createStatus, createMessage] = await userFunctions.createAccount(
@@ -220,7 +228,24 @@ function add(server){
                     else resolve();
                 });
             });
+
+            let encryptedPass = "";
+        
+        
+            if (!isComplex(newData.pass))
+                return [false, 400, 'Password must contain upper-case, lower-case, number and special character.'];
+        
+            await new Promise((resolve, reject) => {
+                bcrypt.hash(newData.pass, 10, function(err, hash) { 
+                    encryptedPass = hash;
+                    resolve(); // Resolve the promise when hashing is complete
+                });
+            });
+            
+            // User123$
+            newData.pass = encryptedPass;   
         }
+
             
         console.log("Updating user with data:", newData);
         userModel.updateOne({ "user": req.session.username }, { $set: newData })
