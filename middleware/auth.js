@@ -1,5 +1,6 @@
 // middleware/authMiddleware.js
 // Single site-wide component to check access authorization (Requirement 2.2.1)
+const { logAccessControlFailure } = require('./error');
 
 const ROLES = {
     ADMIN: 'admin',
@@ -56,19 +57,25 @@ function requireAuth(req, res, next) {
 function requireRole(...allowedRoles) {
     return (req, res, next) => {
         if (!req.session || !req.session.isAuthenticated) {
-            return res.status(401).json({ 
-                error: 'Unauthorized', 
-                message: 'Authentication required' 
+            return res.status(401).json({
+                error: 'Unauthorized',
+                message: 'Authentication required'
             });
         }
 
         const userRole = req.session.role;
-        
+
         if (!allowedRoles.includes(userRole)) {
-            // Access controls should fail securely (Requirement 2.2.2)
-            return res.status(403).json({ 
-                error: 'Forbidden', 
-                message: 'You do not have permission to access this resource' 
+            logAccessControlFailure(
+                req.session.username || 'Unknown',
+                req.originalUrl,
+                req.method,
+                `Insufficient role: expected one of [${allowedRoles.join(', ')}], got ${userRole}`,
+                req.ip || req.connection.remoteAddress
+            );
+            return res.status(403).json({
+                error: 'Forbidden',
+                message: 'You do not have permission to access this resource'
             });
         }
 
@@ -80,23 +87,30 @@ function requireRole(...allowedRoles) {
 function requirePermission(...requiredPermissions) {
     return (req, res, next) => {
         if (!req.session || !req.session.isAuthenticated) {
-            return res.status(401).json({ 
-                error: 'Unauthorized', 
-                message: 'Authentication required' 
+            return res.status(401).json({
+                error: 'Unauthorized',
+                message: 'Authentication required'
             });
         }
 
         const userRole = req.session.role;
         const userPermissions = PERMISSIONS[userRole.toUpperCase()] || [];
-        
-        const hasPermission = requiredPermissions.some(permission => 
+
+        const hasPermission = requiredPermissions.some(permission =>
             userPermissions.includes(permission)
         );
 
         if (!hasPermission) {
-            return res.status(403).json({ 
-                error: 'Forbidden', 
-                message: 'You do not have permission to perform this action' 
+            logAccessControlFailure(
+                req.session.username || 'Unknown',
+                req.originalUrl,
+                req.method,
+                `Missing permission: need one of [${requiredPermissions.join(', ')}], user has [${userPermissions.join(', ')}]`,
+                req.ip || req.connection.remoteAddress
+            );
+            return res.status(403).json({
+                error: 'Forbidden',
+                message: 'You do not have permission to perform this action'
             });
         }
 
