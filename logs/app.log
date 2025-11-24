@@ -9,3 +9,4 @@
 [2025-11-24T08:14:30.675Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
 [2025-11-24T08:14:37.819Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
 [2025-11-24T08:17:50.835Z] PASSWORD CHANGE - User: user changed their password successfully.
+[2025-11-24T08:30:26.087Z] PASSWORD CHANGE ATTEMPT - User: user attempted to reuse an old password.

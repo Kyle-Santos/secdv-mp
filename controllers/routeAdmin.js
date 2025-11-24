@@ -189,18 +189,16 @@ function add(server) {
 
             if (newPassword !== confirmPassword)
                 res.status(400).send("Passwords do not match.");
-
-            await changePassword(req.params.id, newPassword).then(() => {
-                message = "Password changed successfully for user";
-                console.log("Password changed successfully for user");
-            }).catch(err => {
-                console.error("Error changing password for user:", err);
-                return res.status(400).send(err.message);
-            });  
-
-            
-            return res.redirect('/admin/dashboard');
-            // return res.status(200).send(message);
+            else {
+                await changePassword(req.params.id, newPassword).then(() => {
+                    console.log("Password changed successfully.");
+                    res.redirect('/admin/dashboard');
+                }).catch(err => {
+                    console.log(err);
+                    res.status(400).send(err.message);
+                    return;
+                });  
+            }
 
         } catch (err) {
             console.error(err);
