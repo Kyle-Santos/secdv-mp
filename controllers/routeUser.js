@@ -53,7 +53,7 @@ function add(server){
     // Create account - WITH VALIDATION (Requirements 2.3.x)
     server.post('/create-account', [
         validateUsername('username'),  // Only alphanumeric, underscore, hyphen
-        validateTextLength('password', 8, 128),  // Password length
+        validateTextLength('password', 8, 64),  // Password length
         validateTextLength('picture', 0, 500),   // Optional picture URL
         validateTextLength('bio', 0, 500),        // Optional bio
         validateTextLength('answers', 3, 50)   // each answer
@@ -270,7 +270,7 @@ function add(server){
 
     // Forgot password reset endpoint
     server.post('/forgot-password', [
-        validateTextLength('newPassword', 8, 128)
+        validateTextLength('newPassword', 8, 64)
     ], async (req, resp) => {
         const { username, newPassword, confirmNewPassword, answers } = req.body;
         const ipAddress = req.ip || req.connection.remoteAddress;
