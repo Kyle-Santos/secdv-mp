@@ -12,6 +12,25 @@
             <h2>System Logs</h2>
             <p>View access logs and error logs.</p>
         </a>
+
+        <!-- Download Logs -->
+        <a class="admin-card" href="/admin/logs/download">
+            <div class="icon">⬇️</div>
+            <h2>Download Logs</h2>
+            <p>Download all system logs as a file.</p>
+        </a>
+
+        <!-- Clear Logs -->
+        <form class="admin-card clear-logs-card" 
+              action="/admin/logs/clear" 
+              method="POST"
+              onsubmit="return confirm('Are you sure you want to clear all logs?');">
+            <div class="icon">🗑️</div>
+            <h2>Clear Logs</h2>
+            <p>Permanently erase all log files.</p>
+            <button type="submit" class="clear-btn">Clear Logs</button>
+        </form>
+
     </div>
 
     <!-- Users Table Section -->
@@ -38,6 +57,7 @@
                     <td>{{createdAt}}</td>
                     <td>
                         <button class="edit-btn" data-id="{{_id}}">Edit</button>
+                        <button class="password-btn" data-id="{{_id}}">Password</button>
                         <button class="delete-btn" data-id="{{_id}}">Delete</button>
                     </td>
                 </tr>

@@ -265,7 +265,6 @@ function add(server){
             await changePassword(userId, newData.pass).then(() => {
                 message = "Password changed successfully for user: " + req.session.username;
                 console.log("Password changed successfully for user:", req.session.username);
-                writeToLog(`[${new Date().toISOString()}] PASSWORD CHANGE - User: ${req.session.username} changed their password successfully.`);
             }).catch(err => {
                 message = err.message;
                 console.error("Error changing password for user:", req.session.username, err);

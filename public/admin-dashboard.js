@@ -34,6 +34,13 @@ $(document).ready(function () {
         }
     }
 
+    // Change password
+    $(".password-btn").on("click", function () {
+        const userId = $(this).data("id");
+        window.location.href = `/admin/users/${userId}/password`;
+    });
+
+
     // Trigger when role changes
     $("#roleSelect").change(toggleCondoField);
 

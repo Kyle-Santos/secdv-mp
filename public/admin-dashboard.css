@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 90vh;
     height: auto;
     width: 70%;
     margin: 0 auto;
@@ -187,4 +187,21 @@
 
 .cancel-btn:hover {
     background: #777;
+}
+
+
+
+
+
+.password-btn {
+    background: #42a5f5;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.password-btn:hover {
+    background: #1e88e5;
 }

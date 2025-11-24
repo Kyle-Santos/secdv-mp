@@ -4,6 +4,7 @@
 const userModel = require('../models/User');
 const condoModel = require('../models/Condo');
 
+const { changePassword } = require('../models/userFunctions');
 const { requireAuth, requireRole, ROLES } = require('../middleware/auth');
 const { getLogs, getRecentLogs, clearLogs, downloadLogs } = require('../middleware/error');
 
@@ -40,7 +41,7 @@ function add(server) {
         
         const users = await userModel.find().lean(); // all users
 
-        console.log(users);
+        // console.log(users);
         res.render('admin-dashboard', {
             layout: 'index',
             title: 'Admin Dashboard',
@@ -149,6 +150,61 @@ function add(server) {
         } catch (err) {
             console.error(err);
             res.status(500).send("Failed to update user.");
+        }
+    });
+
+
+    // CHANGE PASSWORD PAGE
+    server.get('/admin/users/:id/password', [
+        requireAuth,
+        requireRole(ROLES.ADMIN)
+    ], async (req, res) => {
+        try {
+            const user = await userModel.findById(req.params.id).lean();
+            if (!user) return res.status(404).send("User not found");
+
+            res.render('admin-user-password', {
+                layout: 'index',
+                title: 'Change Password',
+                isAdmin: true,
+                username: req.session.username,
+                user
+            });
+        } catch (err) {
+            console.error(err);
+            res.status(500).send("Failed to load password page.");
+        }
+    });
+
+    // CHANGE PASSWORD POST
+    server.post('/admin/users/:id/password', [
+        requireAuth,
+        requireRole(ROLES.ADMIN)
+    ], async (req, res) => {
+        try {
+            const { newPassword, confirmPassword } = req.body;
+
+            if (!newPassword || !confirmPassword)
+                res.status(400).send("Missing fields.");
+
+            if (newPassword !== confirmPassword)
+                res.status(400).send("Passwords do not match.");
+
+            await changePassword(req.params.id, newPassword).then(() => {
+                message = "Password changed successfully for user";
+                console.log("Password changed successfully for user");
+            }).catch(err => {
+                console.error("Error changing password for user:", err);
+                return res.status(400).send(err.message);
+            });  
+
+            
+            return res.redirect('/admin/dashboard');
+            // return res.status(200).send(message);
+
+        } catch (err) {
+            console.error(err);
+            res.status(500).send("Failed to update password.");
         }
     });
 
