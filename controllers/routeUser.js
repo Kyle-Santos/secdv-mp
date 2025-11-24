@@ -345,13 +345,8 @@ function add(server){
         const newData = req.body;
         
         if (newData.user !== undefined) {
-            await new Promise((resolve, reject) => {
-                validateUsername('user')(req, resp, (err) => {
-                    if (resp.headersSent) return; // stop execution if validator already responded
-                    if (err) reject(err);
-                    else resolve();
-                });
-            });
+            validateUsername('user')(req, resp, () => {});
+            if (resp.headersSent) return; // STOP if validator already responded
         }
         
         currentPass = newData.currentPass;
@@ -370,6 +365,11 @@ function add(server){
                     message: 'Current password is incorrect.', 
                     user: req.session.username 
                 });
+            }
+
+            if (newData.pass !== undefined) {
+                validateTextLength('pass', 8, 64)(req, resp, () => {});
+                if (resp.headersSent) return; // STOP if validator already responded
             }
 
             // Change to new password
