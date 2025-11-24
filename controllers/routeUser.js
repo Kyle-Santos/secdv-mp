@@ -254,7 +254,7 @@ function add(server){
             // Verify current password
             const passwordMatch = await bcrypt.compare(currentPass, passwordHash);
             if (!passwordMatch) {
-                return resp.status(400).json({
+                return resp.json({
                     message: 'Current password is incorrect.', 
                     user: req.session.username 
                 });

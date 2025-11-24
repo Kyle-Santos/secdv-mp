@@ -684,3 +684,9 @@ Password can only be changed once per 24 h.
 [2025-11-24T07:17:59.297Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
 [2025-11-24T07:18:00.239Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
 [2025-11-24T07:18:16.889Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:27:20.098Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-24T07:27:27.289Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T07:28:32.158Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-24T07:28:40.956Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T07:29:23.730Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-24T07:29:29.943Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful

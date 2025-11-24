@@ -156,6 +156,7 @@ $(document).ready(function(){
                 $("#login").hide();
                 updateDropdownText(username); // changes the dropdown
                 window.location.href="/";
+                alert(response.message);
                 // alert("Welcome to The Condo Bro, " + username);
             })
             .fail(function(xhr, status, error) {
