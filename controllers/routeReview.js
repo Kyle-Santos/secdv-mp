@@ -138,10 +138,19 @@ function add(server){
         }
     });
 
-    server.get('/edit-review/:id', async (req, resp) => {
+    server.get('/edit-review/:id',
+        requireAuth,
+        checkOwnership(async (req) => {
+            const review = await reviewModel.findById(req.params.id);
+            if (!review) throw new Error('Review not found');   
+            // Return both IDs for ownership check
+            return String(review.author);
+        }), 
+        async (req, resp) => {
         try {
             const reviewId = req.params.id;
             const review = await reviewModel.findOne({ _id: reviewId }).lean();
+            console.log(review);    
             resp.send({ review: review }); 
         } catch(error) {
             resp.status(500).send('Error fetching review');

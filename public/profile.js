@@ -11,23 +11,35 @@ $(document).ready(function() {
     // Opens modal
     $('.review-edit').on('click', function() {
         const reviewId = $(this).closest('.grid-item').attr('id');
-        $.get('/edit-review/' + reviewId, function(data) {
-            $(".modal-content h2").attr("id", reviewId);
-            $("#editReviewTitle").val(data.review.title);
-            $("#editReviewContent").val(data.review.content);
+        $.ajax({
+            url: '/edit-review/' + reviewId,
+            type: 'GET',
+            success: function(data) {
+                console.log(data);
 
-            var i = 0;
-            $('.star-rating-button').each(function() {
-                if (i != data.review.rating) 
-                    $(this).addClass('active');
-                else    
-                    return;
-                i++;
-            });
-            
+                $(".modal-content h2").attr("id", reviewId);
+                $("#editReviewTitle").val(data.review.title);
+                $("#editReviewContent").val(data.review.content);
 
-        }); 
-        editReviewModal.css('display', 'block');
+                var i = 0;
+                $('.star-rating-button').each(function() {
+                    if (i != data.review.rating) 
+                        $(this).addClass('active');
+                    else    
+                        return;
+                    i++;
+                });
+
+                editReviewModal.css('display', 'block');
+            },
+            error: function(xhr) {
+                if (xhr.status === 403) {
+                    alert('You do not have permission to edit this review.');
+                } else {
+                    alert('Failed to load review. Please try again.');
+                }
+            }
+        });
 
     });
 

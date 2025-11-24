@@ -101,3 +101,16 @@ Stack: Error: Failed to lookup view "error" in views directory "C:\Users\user\re
 [2025-11-24T09:19:27.985Z] PASSWORD CHANGE - User: user changed their password successfully.
 [2025-11-24T09:19:31.257Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
 [2025-11-24T09:19:39.396Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T09:36:59.950Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T09:37:49.778Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T09:39:15.617Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T09:39:41.295Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T09:41:20.190Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T09:41:59.789Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T09:42:44.081Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T09:43:40.479Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T09:44:09.040Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T09:44:25.185Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-24T09:44:30.610Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful
+[2025-11-24T09:44:40.633Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
+[2025-11-24T09:45:44.095Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful

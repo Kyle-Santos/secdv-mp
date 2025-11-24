@@ -125,7 +125,7 @@ function checkOwnership(getResourceOwnerId) {
             const owners = await getResourceOwnerId(req);
             const currentUserId = req.session._id;
             let allowed = false;
-
+            
             if (typeof owners === 'object') {
                 const { reviewAuthor, condoOwner } = owners;
                 allowed = [reviewAuthor, condoOwner].some(id => String(id) === String(currentUserId));
@@ -134,7 +134,7 @@ function checkOwnership(getResourceOwnerId) {
             }
 
             if (req.session.role === ROLES.ADMIN) allowed = true;
-
+            
             if (allowed) next();
             else res.status(403).json({ error: 'Forbidden', message: 'No permission to access this resource' });
         } catch (err) {
