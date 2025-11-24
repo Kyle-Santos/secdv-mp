@@ -73,7 +73,7 @@ async function findUser(username, password){
 
         user.failedAttempts = 0;
         user.lockoutUntil   = undefined;
-        user.lastLoginAt    = new Date();
+        // user.lastLoginAt    = new Date();
         user.lastLoginIp    = (arguments[2] /* ip injected by route */ || '');
         await user.save();
         // Authentication successful
