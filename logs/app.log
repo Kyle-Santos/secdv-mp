@@ -10,3 +10,94 @@
 [2025-11-24T08:14:37.819Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
 [2025-11-24T08:17:50.835Z] PASSWORD CHANGE - User: user changed their password successfully.
 [2025-11-24T08:30:26.087Z] PASSWORD CHANGE ATTEMPT - User: user attempted to reuse an old password.
+[2025-11-24T08:34:49.398Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
+[2025-11-24T08:34:58.363Z] AUTH SUCCESS - Username: whtaft_owner, IP: ::1, Reason: Login successful
+[2025-11-24T08:36:00.504Z] REVIEW DELETED - ReviewID: 69233d68b64d792bf436946c, CondoID: wh-taft, DeletedBy: whtaft_owner (UserID: 6921e8a8a3d47677d0fdc4e1)
+[2025-11-24T08:36:09.683Z] AUTH SUCCESS - Username: whtaft_owner, IP: ::1, Reason: User logged out
+[2025-11-24T08:36:16.990Z] AUTH FAILURE - Username: user, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:36:24.148Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T08:37:34.289Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-24T08:37:52.006Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T08:37:56.173Z] ACCESS CONTROL FAILURE - Username: user, IP: ::1, Resource: /admin/dashboard, Action: GET, Reason: Insufficient role: expected one of [admin], got reviewer
+[2025-11-24T08:37:57.901Z] ACCESS CONTROL FAILURE - Username: user, IP: ::1, Resource: /admin/dashboard, Action: GET, Reason: Insufficient role: expected one of [admin], got reviewer
+[2025-11-24T08:38:10.164Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-24T08:38:15.125Z] AUTH FAILURE - Username: user, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:38:20.280Z] AUTH FAILURE - Username: userwqeq, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:38:49.751Z] VALIDATION FAILURE - Field: password, Value: asd, Reason: Length must be between 8 and 128
+[2025-11-24T08:39:12.108Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T08:39:51.918Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-24T08:40:03.094Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /profile/
+[2025-11-24T08:40:14.910Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:18.022Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:20.725Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:23.082Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:25.520Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:28.423Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:31.115Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:43.142Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:46.019Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:48.649Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:51.248Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:54.992Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:40:57.240Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Account locked – too many failed attempts.
+[2025-11-24T08:43:03.014Z] AUTH FAILURE - Username: user, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T08:43:08.441Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T08:43:14.020Z] ACCESS CONTROL FAILURE - Username: user, IP: ::1, Resource: /admin/dashboard, Action: GET, Reason: Insufficient role: expected one of [admin], got reviewer
+[2025-11-24T08:43:15.232Z] ACCESS CONTROL FAILURE - Username: user, IP: ::1, Resource: /admin/dashboard, Action: GET, Reason: Insufficient role: expected one of [admin], got reviewer
+[2025-11-24T08:50:28.959Z] VALIDATION FAILURE - Field: pass, Value: ASD@, Reason: Length must be between 8 and 64
+[2025-11-24T08:52:05.458Z] VALIDATION FAILURE - Field: pass, Value: asd@, Reason: Length must be between 8 and 64
+[2025-11-24T08:52:08.755Z] ERROR - IP: ::1, Method: GET, URL: /profile/undefined, Error: Failed to lookup view "error" in views directory "C:\Users\user\repos\secdv-mp\views"
+Stack: Error: Failed to lookup view "error" in views directory "C:\Users\user\repos\secdv-mp\views"
+    at Function.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\application.js:597:17)
+    at ServerResponse.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\response.js:1049:7)
+    at C:\Users\user\repos\secdv-mp\controllers\routeUser.js:183:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-11-24T08:52:45.742Z] VALIDATION FAILURE - Field: pass, Value: asd@, Reason: Length must be between 8 and 64
+[2025-11-24T08:52:46.963Z] ERROR - IP: ::1, Method: GET, URL: /profile/undefined, Error: Failed to lookup view "error" in views directory "C:\Users\user\repos\secdv-mp\views"
+Stack: Error: Failed to lookup view "error" in views directory "C:\Users\user\repos\secdv-mp\views"
+    at Function.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\application.js:597:17)
+    at ServerResponse.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\response.js:1049:7)
+    at C:\Users\user\repos\secdv-mp\controllers\routeUser.js:183:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-11-24T08:53:29.832Z] VALIDATION FAILURE - Field: pass, Value: asd, Reason: Length must be between 8 and 64
+[2025-11-24T08:53:31.029Z] ERROR - IP: ::1, Method: GET, URL: /profile/undefined, Error: Failed to lookup view "error" in views directory "C:\Users\user\repos\secdv-mp\views"
+Stack: Error: Failed to lookup view "error" in views directory "C:\Users\user\repos\secdv-mp\views"
+    at Function.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\application.js:597:17)
+    at ServerResponse.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\response.js:1049:7)
+    at C:\Users\user\repos\secdv-mp\controllers\routeUser.js:183:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-11-24T08:57:29.015Z] VALIDATION FAILURE - Field: pass, Value: asd, Reason: Length must be between 8 and 64
+[2025-11-24T08:57:30.209Z] ERROR - IP: ::1, Method: GET, URL: /profile/undefined, Error: Failed to lookup view "error" in views directory "C:\Users\user\repos\secdv-mp\views"
+Stack: Error: Failed to lookup view "error" in views directory "C:\Users\user\repos\secdv-mp\views"
+    at Function.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\application.js:597:17)
+    at ServerResponse.render (C:\Users\user\repos\secdv-mp\node_modules\express\lib\response.js:1049:7)
+    at C:\Users\user\repos\secdv-mp\controllers\routeUser.js:183:41
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-11-24T08:58:27.432Z] VALIDATION FAILURE - Field: pass, Value: asd, Reason: Length must be between 8 and 64
+[2025-11-24T08:59:37.052Z] VALIDATION FAILURE - Field: user, Value: asd$, Reason: Contains invalid characters. Only letters, numbers, underscores, and hyphens are allowed
+[2025-11-24T09:01:51.406Z] VALIDATION FAILURE - Field: user, Value: asd#, Reason: Contains invalid characters. Only letters, numbers, underscores, and hyphens are allowed
+[2025-11-24T09:02:17.666Z] VALIDATION FAILURE - Field: user, Value: asd#, Reason: Contains invalid characters. Only letters, numbers, underscores, and hyphens are allowed
+[2025-11-24T09:02:36.524Z] VALIDATION FAILURE - Field: user, Value: asd#, Reason: Contains invalid characters. Only letters, numbers, underscores, and hyphens are allowed
+[2025-11-24T09:04:24.595Z] VALIDATION FAILURE - Field: user, Value: asd$, Reason: Contains invalid characters. Only letters, numbers, underscores, and hyphens are allowed
+[2025-11-24T09:06:33.758Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-24T09:06:39.034Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful
+[2025-11-24T09:07:43.284Z] VALIDATION FAILURE - Field: pass, Value: asd, Reason: Length must be between 8 and 64
+[2025-11-24T09:11:52.160Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
+[2025-11-24T09:15:42.259Z] AUTH SUCCESS - Username: user7, IP: ::1, Reason: Account created
+[2025-11-24T09:15:52.635Z] VALIDATION FAILURE - Field: password, Value: User123, Reason: Length must be between 8 and 64
+[2025-11-24T09:16:02.369Z] AUTH FAILURE - Username: user8, IP: ::1, Reason: Password must contain upper-case, lower-case, number and special character.
+[2025-11-24T09:16:17.705Z] AUTH FAILURE - Username: user, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T09:16:21.853Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T09:17:31.164Z] VALIDATION FAILURE - Field: pass, Value: user, Reason: Length must be between 8 and 64
+[2025-11-24T09:18:37.582Z] PASSWORD CHANGE ATTEMPT - User: user attempted to change password with a non-complex password.
+[2025-11-24T09:18:37.641Z] PASSWORD CHANGE ATTEMPT - User: user attempted to change password with a non-complex password.
+[2025-11-24T09:18:37.683Z] PASSWORD CHANGE ATTEMPT - User: user attempted to reuse an old password.
+[2025-11-24T09:18:37.701Z] PASSWORD CHANGE ATTEMPT - User: user attempted to change password with a non-complex password.
+[2025-11-24T09:18:37.802Z] PASSWORD CHANGE ATTEMPT - User: user attempted to change password with a non-complex password.
+[2025-11-24T09:18:37.821Z] PASSWORD CHANGE ATTEMPT - User: user attempted to reuse an old password.
+[2025-11-24T09:18:37.883Z] PASSWORD CHANGE ATTEMPT - User: user attempted to change password with a non-complex password.
+[2025-11-24T09:19:00.806Z] PASSWORD CHANGE ATTEMPT - User: user attempted to change password with a non-complex password.
+[2025-11-24T09:19:15.621Z] PASSWORD CHANGE ATTEMPT - User: user attempted to reuse an old password.
+[2025-11-24T09:19:27.985Z] PASSWORD CHANGE - User: user changed their password successfully.
+[2025-11-24T09:19:31.257Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-24T09:19:39.396Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful

@@ -7,6 +7,7 @@ const condoModel = require('../models/Condo');
 const { changePassword } = require('../models/userFunctions');
 const { requireAuth, requireRole, ROLES } = require('../middleware/auth');
 const { getLogs, getRecentLogs, clearLogs, downloadLogs } = require('../middleware/error');
+const { validateTextLength, validateEmail, validateUsername } = require('../middleware/validation');
 
 function add(server) {
     // View all logs - admin only (Requirement 2.4.3)
@@ -73,11 +74,24 @@ function add(server) {
     // CREATE USER POST
     server.post('/admin/users/create', [
         requireAuth,
+        validateTextLength('pass', 8, 64),
         requireRole(ROLES.ADMIN)
     ], async (req, res) => {
         try {
             const { user, pass, email, city, role, assignedCondo } = req.body;
             bcrypt = require('bcrypt');
+
+            // Validate password complexity
+            function isComplex(pwd) {
+              const hasUpper  = /[A-Z]/.test(pwd);
+              const hasLower  = /[a-z]/.test(pwd);
+              const hasDigit  = /[0-9]/.test(pwd);
+              const hasSpecial= /[^A-Za-z0-9]/.test(pwd);
+              return hasUpper && hasLower && hasDigit && hasSpecial;
+            }
+            if (!isComplex(pass)) {
+                return res.status(400).send("Password must include uppercase, lowercase, digit, and special character.");
+            }
 
             const newUser = new userModel({
                 user,

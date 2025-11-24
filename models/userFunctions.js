@@ -159,6 +159,8 @@ async function changePassword(userId, newPlain){
     }
   }
 
+
+  // check complexity
   if (!isComplex(newPlain)) {
     writeToLog(`[${new Date().toISOString()}] PASSWORD CHANGE ATTEMPT - User: ${user.user} attempted to change password with a non-complex password.`);
     throw new Error('Password does not meet complexity rules.');
