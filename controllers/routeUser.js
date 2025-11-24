@@ -11,15 +11,8 @@ const { changePassword, checkSecurityAnswers } = require('../models/userFunction
 // Import middleware
 const { requireAuth, requireRole, ROLES } = require('../middleware/auth');
 const { validateTextLength, validateEmail, validateUsername } = require('../middleware/validation');
-const { logAuthAttempt, logAccessControlFailure } = require('../middleware/error');
+const { logAuthAttempt, logAccessControlFailure, writeToLog } = require('../middleware/error');
 
-function isComplex(pwd) {
-    const hasUpper  = /[A-Z]/.test(pwd);
-    const hasLower  = /[a-z]/.test(pwd);
-    const hasDigit  = /[0-9]/.test(pwd);
-    const hasSpecial= /[^A-Za-z0-9]/.test(pwd);
-    return hasUpper && hasLower && hasDigit && hasSpecial;
-}
 
 function add(server){
     // Check login status - no auth required for this endpoint
@@ -248,46 +241,48 @@ function add(server){
                 });
             });
         }
-        // password validation
-        if (newData.pass !== undefined && newData.pass !== '') {
-            // Validate password length
-            await new Promise((resolve, reject) => {
-                validateTextLength('pass', 8, 128)(req, resp, (err) => {
-                    if (resp.headersSent) return;
-                    if (err) reject(err);
-                    else resolve();
-                });
-            });
+        
+        currentPass = newData.currentPass;
+        if (currentPass) {
+            console.log("Verifying current password for user:", req.session.username);
 
-            // Check password complexity and return proper response
-            if (!isComplex(newData.pass)) {
+            // get session._id to query for pass hash and use for comparing
+            const userId = req.session._id;
+            const user = await userModel.findById(userId).lean();
+            const passwordHash = user ? user.pass : null;
+
+            // Verify current password
+            const passwordMatch = await bcrypt.compare(currentPass, passwordHash);
+            if (!passwordMatch) {
                 return resp.status(400).json({
-                    success: false,
-                    message: 'Password must contain upper-case, lower-case, number and special character.'
+                    message: 'Current password is incorrect.', 
+                    user: req.session.username 
                 });
             }
 
-            // If complex, hash the password
-            let encryptedPass = "";
-            await new Promise((resolve, reject) => {
-                bcrypt.hash(newData.pass, 10, function(err, hash) { 
-                    if (err) {
-                        console.error("Error hashing password:", err);
-                        return resp.status(500).json({
-                            success: false,
-                            message: 'Error processing password'
-                        });
-                    }
-                    encryptedPass = hash;
-                    resolve();
-                });
-            });
+            // Change to new password
+            message = "";
+            await changePassword(userId, newData.pass).then(() => {
+                message = "Password changed successfully for user: " + req.session.username;
+                console.log("Password changed successfully for user:", req.session.username);
+                writeToLog(`[${new Date().toISOString()}] PASSWORD CHANGE - User: ${req.session.username} changed their password successfully.`);
+            }).catch(err => {
+                message = err.message;
+                console.error("Error changing password for user:", req.session.username, err);
+            });  
             
-            newData.pass = encryptedPass;   
+            // remove currentPass and pass from newData to avoid updating it
+            delete newData.currentPass;
+            delete newData.pass;
+
+            if (Object.keys(newData).length === 0) {
+                return resp.json({
+                    message: message, 
+                    user: req.session.username 
+                });
+            }
         }
 
-            
-        console.log("Updating user with data:", newData);
         userModel.updateOne({ "user": req.session.username }, { $set: newData })
             .then(result => {
                 console.log("Update successful:", result);

@@ -645,3 +645,42 @@ Expecting 'OPEN_ENDBLOCK', got 'EOF'
 [2025-11-23T17:03:50.097Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Password must contain upper-case, lower-case, number and special character.
 [2025-11-23T17:04:07.683Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Password must contain upper-case, lower-case, number and special character.
 [2025-11-23T17:04:18.568Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Password must contain upper-case, lower-case, number and special character.
+[2025-11-23T17:09:56.624Z] AUTH SUCCESS - Username: user4, IP: ::1, Reason: Account created
+[2025-11-23T17:10:33.009Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:10:36.744Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:10:39.334Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:10:42.326Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:10:45.009Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:10:47.567Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Account locked – too many failed attempts.
+[2025-11-23T17:10:56.701Z] AUTH FAILURE - Username: user4, IP: ::1, Reason: Account locked – too many failed attempts.
+[2025-11-23T17:11:02.366Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:11:05.156Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:11:07.606Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:11:10.119Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:11:12.714Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:11:15.114Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:11:17.337Z] AUTH FAILURE - Username: user5, IP: ::1, Reason: Invalid username and/or password
+[2025-11-23T17:19:52.627Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /admin/clear
+[2025-11-23T17:24:09.292Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /admin/clear
+[2025-11-23T17:24:19.960Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T06:39:15.468Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /favicon.ico
+[2025-11-24T06:39:32.758Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T07:09:45.855Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:14:54.664Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:14:57.023Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+Password can only be changed once per 24 h.
+[2025-11-24T07:15:06.230Z] PASSWORD CHANGE - User: user changed their password successfully.
+[2025-11-24T07:15:08.255Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:15:39.640Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: User logged out
+[2025-11-24T07:15:39.963Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:15:47.234Z] AUTH FAILURE - Username: user, IP: ::1, Reason: Invalid username and/or password
+[2025-11-24T07:15:50.979Z] AUTH SUCCESS - Username: user, IP: ::1, Reason: Login successful
+[2025-11-24T07:15:51.163Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:15:53.335Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:15:54.939Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:16:02.217Z] PASSWORD CHANGE - User: user changed their password successfully.
+Password can only be changed once per 24 h.
+[2025-11-24T07:16:03.967Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:17:59.297Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:18:00.239Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json
+[2025-11-24T07:18:16.889Z] 404 NOT FOUND - IP: ::1, Method: GET, URL: /.well-known/appspecific/com.chrome.devtools.json

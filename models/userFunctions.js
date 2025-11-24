@@ -5,6 +5,7 @@ const condoModel = require('../models/Condo');
 
 // can be added to hash the password for confidentiality
 const bcrypt = require('bcrypt'); 
+const { writeToLog } = require('../middleware/error');
 const saltRounds = 10;
 
 function isComplex(pwd) {
@@ -145,23 +146,31 @@ async function changePassword(userId, newPlain){
   if (!user) throw new Error('User not found');
 
   const oneDayAgo = new Date(Date.now() - 24*60*60*1000);
-  if (user.passwordChangedAt && user.passwordChangedAt > oneDayAgo)
-    throw new Error('Password can only be changed once per 24 h.');
+  if (user.passwordChangedAt && user.passwordChangedAt > oneDayAgo) {
+        writeToLog(`[${new Date().toISOString()}] PASSWORD CHANGE ATTEMPT - User: ${user.user} attempted to change password within 24 hours.`);
+        throw new Error('Password can only be changed once per 24 h.');
+  }
 
   // prevent reuse
   for (const oldHash of (user.passwordHistory||[])){
-    if (await bcrypt.compare(newPlain, oldHash))
-      throw new Error('You have used that password recently.');
+    if (await bcrypt.compare(newPlain, oldHash)) {
+        writeToLog(`[${new Date().toISOString()}] PASSWORD CHANGE ATTEMPT - User: ${user.user} attempted to reuse an old password.`);
+        throw new Error('You have used that password recently.');
+    }
   }
 
-  if (!isComplex(newPlain))
+  if (!isComplex(newPlain)) {
+    writeToLog(`[${new Date().toISOString()}] PASSWORD CHANGE ATTEMPT - User: ${user.user} attempted to change password with a non-complex password.`);
     throw new Error('Password does not meet complexity rules.');
+  }
 
   // push current hash into history (keep last 5)
   user.passwordHistory = [user.pass, ...(user.passwordHistory||[])].slice(0,5);
   user.pass            = await bcrypt.hash(newPlain, saltRounds);
   user.passwordChangedAt = new Date();
   await user.save();
+
+  writeToLog(`[${new Date().toISOString()}] PASSWORD CHANGE - User: ${user.user} changed their password successfully.`);
   return true;
 }
 

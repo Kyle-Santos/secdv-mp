@@ -148,6 +148,7 @@ $(document).ready(function() {
         const bio = $("#editProfileForm #bio").val();
         const education = $("#editProfileForm #education").val();
         const city = $("#editProfileForm #city").val();
+        const currentPass = $("#editProfileForm #current-pass").val();
         const pass = $("#editProfileForm #pass").val();
 
         var formData = {};
@@ -164,7 +165,17 @@ $(document).ready(function() {
         if (bio !== "") formData.bio = bio;
         if (education !== "") formData.education = education;
         if (city !== "") formData.city = city;
-        if (pass !== "") formData.pass = pass;
+
+        if (pass !== "" && currentPass !== "") {
+            formData.pass = pass;
+            formData.currentPass = currentPass;
+        } else if (pass !== "" && currentPass === "") {
+            alert("Please enter your current password to change your password.");
+            return;
+        } else if (pass === "" && currentPass !== "") {
+            alert("Please enter a new password to change your password.");
+            return;
+        }
 
         if (Object.keys(formData).length === 0 && !image) {
             alert("Nothing was changed.");
@@ -189,6 +200,7 @@ $(document).ready(function() {
                     editprofile(formData);
                 },
                 error: function(xhr, status, error) {
+                    console.log(xhr)
                     // Handle failure response
                     console.error('Error uploading image:', error);
                     alert(xhr.responseJSON.message); // Display error message
