@@ -6,7 +6,7 @@ const condoModel = require('../models/Condo');
 const reviewModel = require('../models/Review');
 const userFunctions = require('../models/userFunctions');
 const bcrypt = require('bcrypt');                       // needed for token reset
-const { changePassword, checkSecurityAnswers } = require('../models/userFunctions');
+const { changePassword, checkSecurityAnswers, isComplex } = require('../models/userFunctions');
 
 // Import middleware
 const { requireAuth, requireRole, ROLES } = require('../middleware/auth');
@@ -53,7 +53,7 @@ function add(server){
     // Create account - WITH VALIDATION (Requirements 2.3.x)
     server.post('/create-account', [
         validateUsername('username'),  // Only alphanumeric, underscore, hyphen
-        validateTextLength('password', 8, 64),  // Password length
+        validateTextLength('password', 8, 128),  // Password length
         validateTextLength('picture', 0, 500),   // Optional picture URL
         validateTextLength('bio', 0, 500),        // Optional bio
         validateTextLength('answers', 3, 50)   // each answer
@@ -228,6 +228,116 @@ function add(server){
         });
     });
 
+    // Get security questions for a user
+    server.get('/get-security-questions', async (req, resp) => {
+        const username = req.query.username;
+        
+        if (!username) {
+            return resp.status(400).json({
+                success: false,
+                message: 'Username is required'
+            });
+        }
+
+        try {
+            const user = await userModel.findOne({ user: username });
+            if (!user) {
+                return resp.status(404).json({
+                    success: false,
+                    message: 'User not found'
+                });
+            }
+
+            if (!user.securityQuestions || user.securityQuestions.length === 0) {
+                return resp.status(400).json({
+                    success: false,
+                    message: 'No security questions set for this user'
+                });
+            }
+
+            resp.json({
+                success: true,
+                questions: user.securityQuestions
+            });
+        } catch (error) {
+            console.error('Error fetching security questions:', error);
+            resp.status(500).json({
+                success: false,
+                message: 'Internal server error'
+            });
+        }
+    });
+
+    // Forgot password reset endpoint
+    server.post('/forgot-password', [
+        validateTextLength('newPassword', 8, 128)
+    ], async (req, resp) => {
+        const { username, newPassword, confirmNewPassword, answers } = req.body;
+        const ipAddress = req.ip || req.connection.remoteAddress;
+
+        // Basic validation
+        if (!username || !newPassword || !confirmNewPassword || !answers) {
+            return resp.status(400).json({
+                success: false,
+                message: 'All fields are required'
+            });
+        }
+
+        if (newPassword !== confirmNewPassword) {
+            return resp.status(400).json({
+                success: false,
+                message: 'Passwords do not match'
+            });
+        }
+
+        if (!isComplex(newPassword)) {
+            return resp.status(400).json({
+                success: false,
+                message: 'Password must contain upper-case, lower-case, number and special character.'
+            });
+        }
+
+        try {
+            // Find user
+            const user = await userModel.findOne({ user: username });
+            if (!user) {
+                logAuthAttempt(username, false, 'Password reset attempt for non-existent user', ipAddress);
+                return resp.status(404).json({
+                    success: false,
+                    message: 'User not found'
+                });
+            }
+
+            // Check security answers
+            const answersCorrect = await checkSecurityAnswers(user._id, answers);
+            if (!answersCorrect) {
+                logAuthAttempt(username, false, 'Incorrect security answers for password reset', ipAddress);
+                return resp.status(401).json({
+                    success: false,
+                    message: 'Incorrect security answers'
+                });
+            }
+
+            // Change password
+            await changePassword(user._id, newPassword);
+            
+            logAuthAttempt(username, true, 'Password reset successful', ipAddress);
+            
+            resp.json({
+                success: true,
+                message: 'Password reset successfully'
+            });
+        } catch (error) {
+            console.error('Error during password reset:', error);
+            logAuthAttempt(username, false, `Password reset error: ${error.message}`, ipAddress);
+            
+            resp.status(400).json({
+                success: false,
+                message: error.message
+            });
+        }
+    });
+
     // Submit profile edit - Requires authentication + validation (Requirements 2.3.x)
     server.patch('/edit-profile-submit', [
         requireAuth,
@@ -238,7 +348,7 @@ function add(server){
             validateUsername('user')(req, resp, () => {});
             if (resp.headersSent) return; // STOP if validator already responded
         }
-
+        
         currentPass = newData.currentPass;
         if (currentPass) {
             console.log("Verifying current password for user:", req.session.username);

@@ -49,6 +49,9 @@
                     <input type="checkbox">
                     <div>Remember me on this computer</div>
                 </div>
+                <div class="forgot-password-link">
+                    <a href="#" id="show-forgot-password-from-login">Forgot Password?</a>
+                </div>
                 
             </form>          
         </div>
@@ -169,3 +172,46 @@
                 </form>
             </div>    
         </div>
+
+        <div class="forgot-password pop-up" id="forgot-password" style="display: none;">
+    <div>
+        <button type="button" class="close-button" id="close-forgot">X</button>
+    </div>
+
+    <div class="pop-up-body">
+        <div>The<br/>Condo<br/>Bro<br/></div>
+        <div>Reset Your Password</div>
+
+        <form id="forgot-password-form" name="forgot-password-form" method="post">
+            <!-- Stage 1: Username input -->
+            <div id="username-stage">
+                <div>
+                    <input type="text" placeholder="Username (required)" name="username" id="forgot-username" required>
+                </div>
+                <div>
+                    <button type="button" id="continue-to-questions" class="submit">Continue</button>
+                </div>
+            </div>
+            
+            <!-- Stage 2: Security questions and new password (initially hidden) -->
+            <div id="questions-stage" style="display: none;">
+                <div style="margin-top:12px;font-weight:bold;">Answer your security questions</div>
+
+                <div id="security-questions-container">
+                    <!-- Security questions will be dynamically inserted here -->
+                </div>
+
+                <div>
+                    <input type="password" placeholder="New Password (required)" name="new-password" required>
+                </div>
+                <div>
+                    <input type="password" placeholder="Confirm New Password (required)" name="confirm-new-password" required>
+                </div>
+                
+                <div>
+                    <button type="submit" class="submit">Reset Password</button>
+                </div>
+            </div>
+        </form>
+    </div>    
+</div>

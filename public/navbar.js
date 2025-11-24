@@ -237,6 +237,168 @@ $(document).ready(function(){
             window.location.href = "/";       
         }
     });
+    
+    // Forgot password functionality - Two step process
+    $("#show-forgot-password-from-login").click(function(event){
+        event.preventDefault();
+        $("#login").hide();
+        $("#forgot-password").show();
+        // Reset to stage 1
+        $("#username-stage").show();
+        $("#questions-stage").hide();
+        $("#forgot-password-form")[0].reset();
+        $("#security-questions-container").empty();
+    });
+
+    $("#close-forgot").click(function(){
+        $("#forgot-password").hide();
+        $("#login").show();
+        // Reset to stage 1
+        $("#username-stage").show();
+        $("#questions-stage").hide();
+        $("#forgot-password-form")[0].reset();
+        $("#security-questions-container").empty();
+    });
+
+    // Continue button handler - load security questions
+    $("#continue-to-questions").click(function(){
+        const username = $("#forgot-username").val().trim();
+        
+        if (!username) {
+            alert("Please enter your username");
+            return;
+        }
+
+        // Show loading state
+        $(this).prop('disabled', true).text('Loading...');
+
+        // Load security questions for this user
+        $.get('/get-security-questions', { username: username })
+            .done(function(response) {
+                if (response.success) {
+                    loadSecurityQuestions(response.questions);
+                    // Move to stage 2
+                    $("#username-stage").hide();
+                    $("#questions-stage").show();
+                } else {
+                    alert(response.message);
+                }
+            })
+            .fail(function(xhr, status, error) {
+                console.error('Error loading security questions:', error);
+                alert('Error loading security questions. Please try again.');
+            })
+            .always(function() {
+                // Reset button state
+                $("#continue-to-questions").prop('disabled', false).text('Continue');
+            });
+    });
+
+    // Function to load security questions
+    function loadSecurityQuestions(questions) {
+        const container = $("#security-questions-container");
+        container.empty();
+        
+        questions.forEach((question, index) => {
+            const questionHtml = `
+                <div style="margin-bottom: 15px;">
+                    <div style="margin-bottom: 5px;"><strong>${question}</strong></div>
+                    <input type="text" name="a${index + 1}" placeholder="Your answer" required style="width: 100%; padding: 8px;">
+                </div>
+            `;
+            container.append(questionHtml);
+        });
+    }
+
+    // Forgot password form submission
+    $("#forgot-password-form").submit(function(event) {
+        event.preventDefault();
+        
+        if (!checkForgotPasswordForm()) {
+            return;
+        }
+
+        const username = $("#forgot-username").val();
+        const newPassword = $("#forgot-password-form input[name='new-password']").val();
+        const confirmNewPassword = $("#forgot-password-form input[name='confirm-new-password']").val();
+
+        // Gather security answers
+        const answers = [
+            $("#forgot-password-form input[name='a1']").val().trim(),
+            $("#forgot-password-form input[name='a2']").val().trim(),
+            $("#forgot-password-form input[name='a3']").val().trim()
+        ];
+
+        $("#forgot-password").hide();
+
+        // Send POST request to server
+        $.post('/forgot-password', {
+            username: username,
+            newPassword: newPassword,
+            confirmNewPassword: confirmNewPassword,
+            answers: answers
+        })
+        .done(function(response) {
+            alert(response.message);
+            $("#forgot-password").hide();
+            $("#login").show();
+            // Reset the form completely
+            resetForgotPasswordForm();
+        })
+        .fail(function(xhr, status, error) {
+            console.error('Error resetting password:', error);
+            alert(xhr.responseJSON.message);
+            $("#forgot-password").show();
+        });
+    });
+
+    // Update the form validation function
+    function checkForgotPasswordForm(){
+        const username = $("#forgot-username").val();
+        const newPassword = $("#forgot-password-form input[name='new-password']").val();
+        const confirmNewPassword = $("#forgot-password-form input[name='confirm-new-password']").val();
+
+        if(!username || username.length < 1){
+            alert("Username is required.");
+            return false;
+        }
+
+        if(newPassword.length < 1 || confirmNewPassword.length < 1){
+            alert("Password fields must not be empty.");
+            return false;
+        }
+
+        if(checkWhiteSpace(newPassword) || checkWhiteSpace(confirmNewPassword)){
+            alert("Password must not contain white space.");
+            return false;
+        }
+
+        if(newPassword !== confirmNewPassword){
+            alert("Passwords do not match. Please try again.");
+            return false;
+        }
+
+        // Check if security questions are answered
+        const answer1 = $("#forgot-password-form input[name='a1']").val();
+        const answer2 = $("#forgot-password-form input[name='a2']").val();
+        const answer3 = $("#forgot-password-form input[name='a3']").val();
+        
+        if(!answer1 || !answer2 || !answer3 || 
+        answer1.length < 1 || answer2.length < 1 || answer3.length < 1){
+            alert("Please answer all security questions.");
+            return false;
+        }
+
+        return true;
+    }
+
+    // Helper function to reset the forgot password form
+    function resetForgotPasswordForm() {
+        $("#forgot-password-form")[0].reset();
+        $("#security-questions-container").empty();
+        $("#username-stage").show();
+        $("#questions-stage").hide();
+    }
 });
 
 function updateDropdownText(username) { 
