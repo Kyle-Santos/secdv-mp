@@ -3,11 +3,26 @@
 
 const userModel = require('../models/User');
 const condoModel = require('../models/Condo');
+const bcrypt = require('bcrypt');
 
 const { changePassword } = require('../models/userFunctions');
 const { requireAuth, requireRole, ROLES } = require('../middleware/auth');
-const { getLogs, getRecentLogs, clearLogs, downloadLogs } = require('../middleware/error');
+const { getLogs, getRecentLogs, clearLogs, downloadLogs, writeToLog } = require('../middleware/error');
 const { validateTextLength, validateEmail, validateUsername } = require('../middleware/validation');
+
+async function requireAdminPassword(req, res, next) {
+    const adminPassword = req.body.adminPassword;
+    if (!adminPassword) return res.status(403).json({ message: "Admin password required" });
+
+    const adminUser = await userModel.findOne({ user: req.session.username });
+    if (!adminUser) return res.status(403).json({ message: "Admin not found" });
+
+    const match = await bcrypt.compare(adminPassword, adminUser.pass);
+    if (!match) return res.status(403).json({ message: "Incorrect admin password" });
+
+    console.log("Admin password verified.");
+    next();
+}
 
 function add(server) {
     // View all logs - admin only (Requirement 2.4.3)
@@ -31,7 +46,8 @@ function add(server) {
     // Clear logs - admin only
     server.post('/admin/logs/clear', [
         requireAuth,
-        requireRole(ROLES.ADMIN)
+        requireRole(ROLES.ADMIN),
+        requireAdminPassword
     ], clearLogs);
 
     // Admin dashboard page
@@ -58,7 +74,7 @@ function add(server) {
     // CREATE USER PAGE
     server.get('/admin/users/create', [
         requireAuth,
-        requireRole(ROLES.ADMIN)
+        requireRole(ROLES.ADMIN),
     ], async (req, res) => {
         const condos = await condoModel.find().lean();
 
@@ -75,11 +91,11 @@ function add(server) {
     server.post('/admin/users/create', [
         requireAuth,
         validateTextLength('pass', 8, 64),
-        requireRole(ROLES.ADMIN)
+        requireRole(ROLES.ADMIN),
+        requireAdminPassword
     ], async (req, res) => {
         try {
             const { user, pass, email, city, role, assignedCondo } = req.body;
-            bcrypt = require('bcrypt');
 
             // Validate password complexity
             function isComplex(pwd) {
@@ -104,6 +120,7 @@ function add(server) {
 
             await newUser.save();
 
+            writeToLog(`[${new Date().toISOString()}] Admin ${req.session.username} created user ${user}`);
             // If owner → update the condo to assign them
             if (role === "owner" && assignedCondo) {
                 await condoModel.findOneAndUpdate(
@@ -148,7 +165,8 @@ function add(server) {
     // EDIT USER POST
     server.post('/admin/users/:id/edit', [
         requireAuth,
-        requireRole(ROLES.ADMIN)
+        requireRole(ROLES.ADMIN),
+        requireAdminPassword
     ], async (req, res) => {
         try {
             const updates = {
@@ -159,7 +177,8 @@ function add(server) {
             };
 
             await userModel.findByIdAndUpdate(req.params.id, updates);
-
+            
+            writeToLog(`${new Date().toISOString()}] Admin ${req.session.username} edited user ${updates.user}`);
             res.redirect('/admin/dashboard');
         } catch (err) {
             console.error(err);
@@ -193,7 +212,8 @@ function add(server) {
     // CHANGE PASSWORD POST
     server.post('/admin/users/:id/password', [
         requireAuth,
-        requireRole(ROLES.ADMIN)
+        requireRole(ROLES.ADMIN),
+        requireAdminPassword
     ], async (req, res) => {
         try {
             const { newPassword, confirmPassword } = req.body;
@@ -206,6 +226,7 @@ function add(server) {
             else {
                 await changePassword(req.params.id, newPassword).then(() => {
                     console.log("Password changed successfully.");
+                    writeToLog(`[${new Date().toISOString()}] Admin ${req.session.username} changed password for user ID ${req.params.id}`);
                     res.redirect('/admin/dashboard');
                 }).catch(err => {
                     console.log(err);
@@ -224,11 +245,13 @@ function add(server) {
     // DELETE USER
     server.post('/admin/users/delete', [
         requireAuth,
-        requireRole(ROLES.ADMIN)
+        requireRole(ROLES.ADMIN),
+        requireAdminPassword
     ], async (req, res) => {
         try {
             const result = await userModel.deleteOne({ _id: req.body.userId });
 
+            writeToLog(`[${new Date().toISOString()}] Admin ${req.session.username} deleted user ID ${req.body.userId}`);
             res.json({ deleted: result.deletedCount > 0 });
 
         } catch (err) {

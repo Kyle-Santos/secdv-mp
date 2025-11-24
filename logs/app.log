@@ -114,3 +114,11 @@ Stack: Error: Failed to lookup view "error" in views directory "C:\Users\user\re
 [2025-11-24T09:44:30.610Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful
 [2025-11-24T09:44:40.633Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: User logged out
 [2025-11-24T09:45:44.095Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful
+[2025-11-24T09:49:23.099Z] AUTH SUCCESS - Username: admin, IP: ::1, Reason: Login successful
+[2025-11-24T10:03:57.774Z] VALIDATION FAILURE - Field: pass, Value: asd, Reason: Length must be between 8 and 64
+[2025-11-24T10:11:54.463Z] PASSWORD CHANGE ATTEMPT - User: user7 attempted to change password within 24 hours.
+[2025-11-24T10:12:08.385Z] PASSWORD CHANGE ATTEMPT - User: user7 attempted to change password within 24 hours.
+2025-11-24T10:12:19.870Z] Admin admin edited user user8
+[2025-11-24T10:12:35.881Z] Admin admin deleted user ID 69242e83a800d8d97ad0c872
+[2025-11-24T10:22:01.734Z] Admin admin created user user7
+[2025-11-24T10:22:27.747Z] Admin admin deleted user ID 692431c993cbf1e98c15a876

@@ -26,8 +26,13 @@
                 <select name="role" required>
                     <option value="owner" {{#if_eq user.role "owner"}}selected{{/if_eq}}>Owner</option>
                     <option value="admin" {{#if_eq user.role "admin"}}selected{{/if_eq}}>Admin</option>
-                    <option value="visitor" {{#if_eq user.role "visitor"}}selected{{/if_eq}}>Visitor</option>
+                    <option value="reviewer" {{#if_eq user.role "reviewer"}}selected{{/if_eq}}>Reviewer</option>
                 </select>
+            </div>
+
+            <div class="form-group">
+                <label>Admin Password:</label>
+                <input type="password" name="adminPassword" placeholder="Enter your password" required>
             </div>
 
             <div class="form-actions">
