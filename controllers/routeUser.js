@@ -142,7 +142,8 @@ function add(server){
 
             // Log successful login (Requirement 2.4.5)
             logAuthAttempt(username, true, 'Login successful', ipAddress);
-
+            user.lastLoginAt    = new Date();
+            await user.save();
             res.status(findStatus).json({
                 message: `${findMessage} ${lastInfo}`, 
                 picture: user.picture,
@@ -151,7 +152,8 @@ function add(server){
         } else {
             // Log failed login (Requirement 2.4.5)
             logAuthAttempt(username, false, findMessage, ipAddress);
-            
+            user.lastLoginAt    = new Date();
+            await user.save();
             res.status(findStatus).json({
                 message: findMessage
             });
