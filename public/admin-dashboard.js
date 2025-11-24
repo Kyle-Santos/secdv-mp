@@ -72,6 +72,26 @@ $(document).ready(function () {
         });
     });
 
+
+    $('.clear-logs-card').on('submit', async function(e) {
+        e.preventDefault(); // prevent normal submit
+
+        try {
+            const adminPassword = await promptAdminPassword();
+
+            // send form via AJAX including admin password
+            $.post('/admin/logs/clear', { adminPassword }, function(response) {
+                Swal.fire('Success', 'Logs cleared successfully.', 'success');
+            }).fail(function(xhr) {
+                Swal.fire('Error', xhr.responseJSON?.message || 'Failed to clear logs.', 'error');
+            });
+
+        } catch (err) {
+            // Cancelled or no password entered
+            console.log('Action cancelled:', err);
+        }
+    });
+
     
 
     function toggleCondoField() {

@@ -178,7 +178,7 @@ function add(server) {
 
             await userModel.findByIdAndUpdate(req.params.id, updates);
             
-            writeToLog(`${new Date().toISOString()}] Admin ${req.session.username} edited user ${updates.user}`);
+            writeToLog(`[${new Date().toISOString()}] Admin ${req.session.username} edited user ${updates.user}`);
             res.redirect('/admin/dashboard');
         } catch (err) {
             console.error(err);
